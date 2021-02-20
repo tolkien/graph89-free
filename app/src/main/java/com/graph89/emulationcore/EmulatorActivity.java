@@ -79,6 +79,7 @@ import com.graph89.common.V200Specific;
 import com.graph89.controls.FilePickerActivity;
 import com.graph89.controls.ReceivedFileSaver;
 import com.graph89.controls.ScreenshotTaker;
+import com.graph89.controls.WhatsNew;
 
 public class EmulatorActivity extends Graph89ActivityBase
 {
@@ -257,7 +258,6 @@ public class EmulatorActivity extends Graph89ActivityBase
 
 	protected void StartGraph89()
 	{
-		BackwardCompatibility.RunPatches(this);
 		CalculatorInstances = new CalculatorInstanceHelper(this);
 
 		UIStateManagerObj.ControlBarIntstance.SetListOfCalculatorTypes(GetCalculatorInstances());
@@ -611,16 +611,16 @@ public class EmulatorActivity extends Graph89ActivityBase
 
 	private void ShowWhatsNew()
 	{
-	/*	SharedPreferences settings = getSharedPreferences("TI_EMU_DH", Context.MODE_PRIVATE);
-		String shown = settings.getString("WhatsNew1.1.3.2Shown", null);
+		SharedPreferences settings = getSharedPreferences("TI_EMU_DH", Context.MODE_PRIVATE);
+		String shown = settings.getString("WhatsNew1.1.3.3Shown", null);
 		if (shown == null)
 		{
 			SharedPreferences.Editor editor = settings.edit();
-			editor.putString("WhatsNew1.1.3.2Shown", "Shown");
+			editor.putString("WhatsNew1.1.3.3Shown", "Shown");
 			editor.commit();
 			WhatsNew wn = new WhatsNew(this);
 			wn.Show();
-		}*/
+		}
 	}
 
 	private List<String> GetCalculatorInstances()

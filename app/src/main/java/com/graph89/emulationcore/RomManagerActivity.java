@@ -434,7 +434,10 @@ public class RomManagerActivity extends Graph89ActivityBase
 		myIntent.putExtra(FilePickerActivity.EXTRA_FILE_PATH, Environment.getExternalStorageDirectory().getAbsolutePath());
 		ArrayList<String> extensions = new ArrayList<String>();
 		extensions.add(".rom");
+		extensions.add(".8Xu");
 		extensions.add(".89u");
+		extensions.add(".v2u");
+		extensions.add(".9xu");
 		extensions.add(".tib");
 		myIntent.putExtra(FilePickerActivity.EXTRA_ACCEPTED_FILE_EXTENSIONS, extensions);
 		myIntent.putExtra(FilePickerActivity.EXTRA_MULTISELECT, false);

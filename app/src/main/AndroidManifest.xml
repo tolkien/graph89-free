@@ -1,12 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.Bisha.TI89Emu"
     android:installLocation="auto"
-    android:versionCode="1133"
-    android:versionName="1.1.3c" >
-
-    <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="17" />
+    android:versionCode="1134"
+    android:versionName="1.1.3d" >
 
     <supports-screens
         android:anyDensity="true"
@@ -16,10 +13,10 @@
         android:smallScreens="true"
         android:xlargeScreens="true" />
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
-     />
 
     <application
         android:icon="@drawable/ic_launcher"

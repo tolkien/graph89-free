@@ -47,6 +47,7 @@ import com.graph89.controls.FilePickerActivity;
 import com.graph89.controls.ListItem;
 import com.graph89.controls.ListViewAdapter;
 import com.graph89.controls.ScreenshotTaker;
+import com.graph89.controls.WhatsNew;
 
 public class ActionsList extends ListView
 {
@@ -57,13 +58,10 @@ public class ActionsList extends ListView
 	public static final int			TAKE_SCREENSHOT			= 2;
 	public static final int			SYNCHRONIZE_CLOCK		= 3;
 	public static final int			RESET					= 4;
-	//public static final int			BACKUP_MANAGER			= 5;
 	public static final int			ROM_MANAGER				= 5;
 	public static final int			CONFIGURATION_SETTINGS	= 6;
-	//public static final int			WHATSNEW				= 8;
-	public static final int			HELP_AND_INFORMATION	= 7;
+	public static final int			WHATSNEW				= 7;
 	public static final int			ABOUT					= 8;
-	public static final int			PAID					= 9;
 
 	private Context					mContext				= null;
 	private ListViewAdapter			mAdapter				= null;
@@ -76,13 +74,10 @@ public class ActionsList extends ListView
 		ActionEntries.add(new ListItem(TAKE_SCREENSHOT, "Take Screenshot"));
 		ActionEntries.add(new ListItem(SYNCHRONIZE_CLOCK, "Synchronize Clock"));
 		ActionEntries.add(new ListItem(RESET, "Reset"));
-	//	ActionEntries.add(new ListItem(BACKUP_MANAGER, "Backup Manager"));
 		ActionEntries.add(new ListItem(ROM_MANAGER, "ROM Manager"));
 		ActionEntries.add(new ListItem(CONFIGURATION_SETTINGS, "Configuration Settings"));
-	//	ActionEntries.add(new ListItem(WHATSNEW, "What's New"));
-		ActionEntries.add(new ListItem(HELP_AND_INFORMATION, "Help and Information"));
+		ActionEntries.add(new ListItem(WHATSNEW, "What's New"));
 		ActionEntries.add(new ListItem(ABOUT, "About"));
-		ActionEntries.add(new ListItem(PAID, "Get paid version"));
 	}
 
 	public ActionsList(Context context)
@@ -161,20 +156,13 @@ public class ActionsList extends ListView
 						activity.startActivity(intent);
 					}
 						break;
-					case HELP_AND_INFORMATION:
-					{
-						Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.graph89.com"));
-						activity.startActivity(intent);
-					}
+					case WHATSNEW:
+						WhatsNew wn = new WhatsNew(activity);
+						wn.Show();
 						break;
 					case ABOUT:
 						AboutScreen a = new AboutScreen(mContext);
 						a.Show();
-						break;
-						
-					case PAID:
-						Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.Bisha.TI89EmuDonation")); 
-						activity.startActivity(intent);
 						break;
 
 				}
@@ -195,10 +183,8 @@ public class ActionsList extends ListView
 			EmulatorActivity.UIStateManagerObj.ActionsListIntstance.setBackgroundColor(0xFF000000);
 
 			ResetVisibility(false);
-		//	ActionEntries.get(BACKUP_MANAGER).IsActive = true;
 			ActionEntries.get(ROM_MANAGER).IsActive = true;
-		//	ActionEntries.get(WHATSNEW).IsActive = true;
-			ActionEntries.get(HELP_AND_INFORMATION).IsActive = true;
+			ActionEntries.get(WHATSNEW).IsActive = true;
 			ActionEntries.get(ABOUT).IsActive = true;
 		}
 

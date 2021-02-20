@@ -51,8 +51,8 @@ public class CalculatorConfiguration
 	public boolean				EnableGrayScale			= false;
 	public boolean				SaveStateOnExit			= true;
 	public int					CPUSpeed				= 100;
-	public boolean				EnergySave				= false;
-	public boolean				OverclockWhenBusy		= false;
+	public boolean				EnergySave				= true;
+	public boolean				OverclockWhenBusy		= true;
 	public boolean				TurnOffOnScreenOff		= true;
 	public String				Orientation				= "Portrait";
 	public boolean				UseLCDGrid				= false;

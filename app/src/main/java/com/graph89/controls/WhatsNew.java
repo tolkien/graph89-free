@@ -22,6 +22,7 @@ package com.graph89.controls;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.text.method.ScrollingMovementMethod;
+import android.text.util.Linkify;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,7 +57,16 @@ public class WhatsNew
 	private void AddText()
 	{
 		// @formatter:off
-		String text =  "****Graph 89 - v1.1.3b - September 2013****\n\n" +
+		String text =
+		"****Graph 89 - v1.1.3d - February 2021****\n\n" +
+		"This app is built by Android Studio 4.1.2\n\n" +
+		"the source code is https://github.com/tolkien/graph89-free\n\n" +
+
+		"****Graph 89 - v1.1.3c - October 2013****\n\n" +
+		"Open the source code to https://bitbucket.org/dhashoandroid/graph89-free.\n\n" +
+		"Update license to GPLv3\n\n" +
+
+		"****Graph 89 - v1.1.3b - September 2013****\n\n" +
 		"An 8Xu (firmware update) file can now be used as a ROM for TI84+, TI84+SE, TI83+ and TI83+SE.\n\n" +
 		"Group files (8xg) are now supported.\n\n" +
 		"Some users had issues with installing apps on TI83/TI84 series. These issues are partially resolved.\n\n" + 
@@ -124,5 +134,6 @@ public class WhatsNew
 		// @formatter:on
 
 		tv.setText(text);
+		Linkify.addLinks(tv, Linkify.WEB_URLS);
 	}
 }

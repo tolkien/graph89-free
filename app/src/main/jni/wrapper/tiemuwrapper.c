@@ -209,7 +209,52 @@ int tiemu_read_emulated_screen (uint8_t *return_flags)
 
 void tiemu_patch(const char* num, const char* vernum)
 {
+	 uint32_t addr;
+	        romcalls_get_symbol_address(0x2A1, &addr);
 
+	        addr -= tihw.rom_base;
+	        addr &= tihw.rom_size - 1;
+
+	        //LEA 4(PC), A0
+	        tihw.rom[addr+0]= 0x41;
+	        tihw.rom[addr+1]= 0xFA;
+	        tihw.rom[addr+2]= 0x00;
+	        tihw.rom[addr+3]= 0x04;
+
+	        //RTS
+	        tihw.rom[addr+4]= 0x4E;
+	        tihw.rom[addr+5]= 0x75;
+
+	        tihw.rom[addr+6]= num[0];
+	        tihw.rom[addr+7]= num[1];
+	        tihw.rom[addr+8]= num[2];
+	        tihw.rom[addr+9]= num[3];
+	        tihw.rom[addr+10]= num[4];
+
+	        tihw.rom[addr+11]= num[5];
+	        tihw.rom[addr+12]= num[6];
+	        tihw.rom[addr+13]= num[7];
+	        tihw.rom[addr+14]= num[8];
+	        tihw.rom[addr+15]= num[9];
+	        tihw.rom[addr+16]= 0x00;
+
+	        romcalls_get_symbol_address(0x16d, &addr);
+
+	        addr -= tihw.rom_base;
+	        addr &= tihw.rom_size - 1;
+
+	        int vnum = strtol(vernum, (char **)NULL, 16);
+
+	        //move.w #$xxxx, d0
+	        tihw.rom[addr+0]= 0x30;
+	        tihw.rom[addr+1]= 0x3C;
+
+	        tihw.rom[addr+2]= (uint8_t)(vnum >> 8);
+	        tihw.rom[addr+3]= (uint8_t)(vnum & 0xFF);
+
+	        //RTS
+	        tihw.rom[addr+4]= 0x4E;
+	        tihw.rom[addr+5]= 0x75;
 }
 
 void tiemu_set_tmp_dir(const char* tmp_dir)

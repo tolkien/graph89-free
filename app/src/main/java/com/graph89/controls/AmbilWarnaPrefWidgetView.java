@@ -33,9 +33,9 @@ public class AmbilWarnaPrefWidgetView extends View {
 	public AmbilWarnaPrefWidgetView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		
-		float density = context.getResources().getDisplayMetrics().density;
-		rectSize = FloatMath.floor(24.f * density + 0.5f);
-		strokeWidth = FloatMath.floor(1.f * density + 0.5f);
+		double density = context.getResources().getDisplayMetrics().density;
+		rectSize = (float)Math.floor(24.f * density + 0.5f);
+		strokeWidth = (float)Math.floor(1.f * density + 0.5f);
 
 		paint = new Paint();
 		paint.setColor(0xffffffff);

@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 18
+    compileSdkVersion 26
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.Bisha.TI89Emu"
-        minSdkVersion 8
-        targetSdkVersion 17
+        minSdkVersion 9
+        targetSdkVersion 26
     }
 
     buildTypes {
@@ -19,5 +19,5 @@ android {
 }
 
 dependencies {
-    compile 'com.google.code.gson:gson:2.2.2'
+    implementation 'com.google.code.gson:gson:2.2.2'
 }
