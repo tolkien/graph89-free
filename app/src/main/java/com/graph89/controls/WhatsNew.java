@@ -34,7 +34,7 @@ import com.graph89.emulationcore.EmulatorActivity;
 
 public class WhatsNew
 {
-	private Context		mContext;
+	private final Context		mContext;
 	private TextView	tv	= null;
 
 	public WhatsNew(Context context)
@@ -46,7 +46,7 @@ public class WhatsNew
 	{
 		final View view = LayoutInflater.from(mContext).inflate(R.layout.whats_new, (ViewGroup) ((EmulatorActivity) mContext).findViewById(R.id.whats_new_layout));
 
-		tv = (TextView) view.findViewById(R.id.whats_new_text);
+		tv = view.findViewById(R.id.whats_new_text);
 		tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
 		final AlertDialog addEditdialog = new AlertDialog.Builder(mContext).setView(view).setTitle("What's New").setPositiveButton(android.R.string.ok, null).create();
 		AddText();

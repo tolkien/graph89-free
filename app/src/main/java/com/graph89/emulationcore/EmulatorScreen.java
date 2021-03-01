@@ -44,8 +44,8 @@ public class EmulatorScreen
 	public int							Zoom					= 1;
 	public boolean						IsFullScreen			= false;
 
-	private volatile int[]				ScreenData;
-	private volatile byte[]				Flags;												//b[0] screen_off, b[1] is_busy
+	private final int[]				ScreenData;
+	private final byte[]				Flags;												//b[0] screen_off, b[1] is_busy
 
 	private int							mZoomedScreenWidth		= 0;
 	private int							mZoomedScreenHeight		= 0;

@@ -51,10 +51,10 @@ public class UIStateManager
 
 		ControlBarIntstance = new ControlBar(context);
 
-		MessageViewIntstance = (MessageView) activity.findViewById(R.id.emulator_main_messageview);
-		ActionsListIntstance = (ActionsList) activity.findViewById(R.id.actionslist);
-		EmulatorViewIntstance = (EmulatorView) activity.findViewById(R.id.emulator_main_emulatorview);
-		ButtonHighlightViewInstance = (ButtonHighlightView) activity.findViewById(R.id.emulator_main_buttonhighlightview);
+		MessageViewIntstance = activity.findViewById(R.id.emulator_main_messageview);
+		ActionsListIntstance = activity.findViewById(R.id.actionslist);
+		EmulatorViewIntstance = activity.findViewById(R.id.emulator_main_emulatorview);
+		ButtonHighlightViewInstance = activity.findViewById(R.id.emulator_main_buttonhighlightview);
 
 		ControlBarIntstance.CalculatorTypeSpinnerInstance.setOnItemSelectedListener(new OnItemSelectedListenerWrapper(new OnItemSelectedListener() {
 			@Override
@@ -142,7 +142,7 @@ public class UIStateManager
 
 class OnItemSelectedListenerWrapper implements OnItemSelectedListener
 {
-	private OnItemSelectedListener	listener;
+	private final OnItemSelectedListener	listener;
 
 	public OnItemSelectedListenerWrapper(OnItemSelectedListener aListener)
 	{

@@ -65,8 +65,8 @@ public class ScreenshotTaker
 		}
 
 		final View view = LayoutInflater.from(mContext).inflate(R.layout.take_screenshot, (ViewGroup) activity.findViewById(R.id.take_screenshot_layout));
-		final TextView constantpath = (TextView) view.findViewById(R.id.take_screenshot_readonly_path);
-		final EditText filenameEdit = (EditText) view.findViewById(R.id.take_screenshot_path);
+		final TextView constantpath = view.findViewById(R.id.take_screenshot_readonly_path);
+		final EditText filenameEdit = view.findViewById(R.id.take_screenshot_path);
 
 		constantpath.setText(mScreenshotFolder);
 

@@ -33,7 +33,7 @@ import com.graph89.emulationcore.EmulatorActivity;
 
 public class AboutScreen
 {
-	private Context		mContext;
+	private final Context		mContext;
 	private TextView	tv	= null;
 
 	public AboutScreen(Context context)
@@ -45,7 +45,7 @@ public class AboutScreen
 	{
 		final View view = LayoutInflater.from(mContext).inflate(R.layout.aboutscreen, (ViewGroup) ((EmulatorActivity) mContext).findViewById(R.id.aboutscreen_layout));
 
-		tv = (TextView) view.findViewById(R.id.aboutscreen_text);
+		tv = view.findViewById(R.id.aboutscreen_text);
 		final AlertDialog addEditdialog = new AlertDialog.Builder(mContext).setView(view).setTitle("About").setPositiveButton(android.R.string.ok, null).create();
 		AddText();
 		addEditdialog.show();

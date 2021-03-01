@@ -194,7 +194,7 @@ public class Util
 			options.inScaled = false;
 			options.inDither = false;
 
-			inputStream = ((EmulatorActivity) context).getAssets().open(assetsPath);
+			inputStream = context.getAssets().open(assetsPath);
 			return BitmapFactory.decodeStream(inputStream, null, options);
 		}
 		finally

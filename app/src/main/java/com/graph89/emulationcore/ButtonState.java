@@ -27,7 +27,7 @@ import com.graph89.common.KeyPress;
 public class ButtonState
 {
 	public static int				ActivePointerID	= -1;
-	private static List<KeyPress>	sPressedButtons	= new ArrayList<KeyPress>();
+	private static final List<KeyPress>	sPressedButtons	= new ArrayList<KeyPress>();
 
 	public static void Reset()
 	{
@@ -86,7 +86,7 @@ public class ButtonState
 
 	public static KeyPress[] GetPressedKeys()
 	{
-		return (KeyPress[]) sPressedButtons.toArray(new KeyPress[sPressedButtons.size()]);
+		return sPressedButtons.toArray(new KeyPress[sPressedButtons.size()]);
 	}
 
 	private static void RefreshButtonHighlightView()

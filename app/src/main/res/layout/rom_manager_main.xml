@@ -31,7 +31,7 @@
             android:orientation="horizontal" >
 
             <TextView
-                android:id="@+id/rom_manager_main_startup_defaults_t2"
+                android:id="@+id/rom_manager_main_startup_defaults_t4"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"

@@ -37,7 +37,7 @@ import com.graph89.common.Util;
 
 public class LandscapeSkin extends SkinBase
 {
-	private Context			mContext;
+	private final Context			mContext;
 
 	private EmulatorScreen	otherScreen		= null;
 

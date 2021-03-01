@@ -35,7 +35,7 @@ import com.graph89.common.Util;
 
 public class ButtonHighlightView extends View
 {
-	private RectF	mCachedRect	= new RectF();
+	private final RectF	mCachedRect	= new RectF();
 
 	public ButtonHighlightView(Context context)
 	{

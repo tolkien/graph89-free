@@ -69,12 +69,12 @@ public class AmbilWarnaDialog
 
 		final View view = LayoutInflater.from(context).inflate(R.layout.ambilwarna_dialog, null);
 		viewHue = view.findViewById(R.id.ambilwarna_viewHue);
-		viewSatVal = (AmbilWarnaKotak) view.findViewById(R.id.ambilwarna_viewSatBri);
-		viewCursor = (ImageView) view.findViewById(R.id.ambilwarna_cursor);
+		viewSatVal = view.findViewById(R.id.ambilwarna_viewSatBri);
+		viewCursor = view.findViewById(R.id.ambilwarna_cursor);
 		viewOldColor = view.findViewById(R.id.ambilwarna_warnaLama);
 		viewNewColor = view.findViewById(R.id.ambilwarna_warnaBaru);
-		viewTarget = (ImageView) view.findViewById(R.id.ambilwarna_target);
-		viewContainer = (ViewGroup) view.findViewById(R.id.ambilwarna_viewContainer);
+		viewTarget = view.findViewById(R.id.ambilwarna_target);
+		viewContainer = view.findViewById(R.id.ambilwarna_viewContainer);
 
 		viewSatVal.setHue(getHue());
 		viewOldColor.setBackgroundColor(color);
@@ -207,10 +207,8 @@ public class AmbilWarnaDialog
 		if (y == viewHue.getMeasuredHeight()) y = 0.f;
 		RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) viewCursor.getLayoutParams();
 		layoutParams.leftMargin = (int) (viewHue.getLeft() - Math.floor(viewCursor.getMeasuredWidth() / 2) - viewContainer.getPaddingLeft());
-		;
-		layoutParams.topMargin = (int) (viewHue.getTop() + y - Math.floor(viewCursor.getMeasuredHeight() / 2) - viewContainer.getPaddingTop());
-		;
-		viewCursor.setLayoutParams(layoutParams);
+        layoutParams.topMargin = (int) (viewHue.getTop() + y - Math.floor(viewCursor.getMeasuredHeight() / 2) - viewContainer.getPaddingTop());
+        viewCursor.setLayoutParams(layoutParams);
 	}
 
 	protected void moveTarget()

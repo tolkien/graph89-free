@@ -62,8 +62,8 @@ public class ReceivedFileSaver
 		}
 
 		final View view = LayoutInflater.from(mContext).inflate(R.layout.save_received_file, (ViewGroup) activity.findViewById(R.id.save_received_file_layout));
-		final TextView constantpath = (TextView) view.findViewById(R.id.save_received_file_readonly_path);
-		final EditText filenameEdit = (EditText) view.findViewById(R.id.save_received_file_path);
+		final TextView constantpath = view.findViewById(R.id.save_received_file_readonly_path);
+		final EditText filenameEdit = view.findViewById(R.id.save_received_file_path);
 
 		constantpath.setText(mReceivedFolder);
 

@@ -71,7 +71,7 @@ public class ListViewAdapter extends ArrayAdapter<ListItem>
 			LayoutInflater inflater = ((Activity) mContext).getLayoutInflater();
 			row = inflater.inflate(mLayoutResourceId, parent, false);
 
-			holder = (TextView) row.findViewById(mTextViewResourceID);
+			holder = row.findViewById(mTextViewResourceID);
 
 			row.setTag(holder);
 		}

@@ -168,7 +168,7 @@ public abstract class SkinBase
 
 		while ((strLine = br.readLine()) != null)
 		{
-			String parts[] = strLine.split(":");
+			String[] parts = strLine.split(":");
 
 			if (parts.length != 2) continue;
 

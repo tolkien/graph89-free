@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:seek="com.graph89.controls.SeekBarPreference"
+    xmlns:seek="http://schemas.android.com/apk/res-auto/com.graph89.controls.com.graph89.controls.SeekBarPreference"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    tools:ignore="ResAuto">
 
     <PreferenceCategory
         android:key="CONFIG_TITLE"

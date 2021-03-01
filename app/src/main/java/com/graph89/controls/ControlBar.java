@@ -42,8 +42,8 @@ public class ControlBar
 		mContext = context;
 		Activity activity = (Activity) mContext;
 
-		mControlBarLayout = (LinearLayout) activity.findViewById(R.id.emulator_main_controlbar);
-		CalculatorTypeSpinnerInstance = (Spinner) activity.findViewById(R.id.controlbar_calctype);
+		mControlBarLayout = activity.findViewById(R.id.emulator_main_controlbar);
+		CalculatorTypeSpinnerInstance = activity.findViewById(R.id.controlbar_calctype);
 
 		SetListOfCalculatorTypes(null);
 	}

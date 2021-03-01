@@ -88,7 +88,7 @@ public class RomManagerActivity extends Graph89ActivityBase
 		mControlBar = new ControlBar(this);
 		mControlBar.HideCalculatorTypeSpinner();
 
-		mRomList = (ListView) this.findViewById(R.id.rom_manager_main_rom_list);
+		mRomList = this.findViewById(R.id.rom_manager_main_rom_list);
 		mRomList.setClickable(true);
 
 		mRomList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -98,9 +98,9 @@ public class RomManagerActivity extends Graph89ActivityBase
 			}
 		});
 
-		mNoRomsInstalledTextView = (TextView) this.findViewById(R.id.rom_manager_main_norommessage);
+		mNoRomsInstalledTextView = this.findViewById(R.id.rom_manager_main_norommessage);
 
-		mAddRomButton = (Button) this.findViewById(R.id.rom_manager_main_add_rom);
+		mAddRomButton = this.findViewById(R.id.rom_manager_main_add_rom);
 
 		mAddRomButton.setOnClickListener(new OnClickListener() {
 			@Override
@@ -149,12 +149,12 @@ public class RomManagerActivity extends Graph89ActivityBase
 	private void ShowAddRom(final int ID)
 	{
 		final View view = LayoutInflater.from(this).inflate(R.layout.rom_manager_add_rom, (ViewGroup) this.findViewById(R.id.rom_manager_add_rom_layout));
-		Button browseButton = (Button) view.findViewById(R.id.rom_manager_add_rom_browse_button);
-		TextView browseTextView = (TextView) view.findViewById(R.id.rom_manager_add_rom_browse_text);
-		final EditText romTitle = (EditText) view.findViewById(R.id.rom_manager_add_rom_title);
-		final ImageButton deleteIcon = (ImageButton) view.findViewById(R.id.rom_manager_add_rom_deleterom);
-		final Spinner calcTypeSpinner = (Spinner) view.findViewById(R.id.add_rom_calctype_spinner);
-		final TableRow calcTypeRow = (TableRow) view.findViewById(R.id.add_rom_calctype_tablerow);
+		Button browseButton = view.findViewById(R.id.rom_manager_add_rom_browse_button);
+		TextView browseTextView = view.findViewById(R.id.rom_manager_add_rom_browse_text);
+		final EditText romTitle = view.findViewById(R.id.rom_manager_add_rom_title);
+		final ImageButton deleteIcon = view.findViewById(R.id.rom_manager_add_rom_deleterom);
+		final Spinner calcTypeSpinner = view.findViewById(R.id.add_rom_calctype_spinner);
+		final TableRow calcTypeRow = view.findViewById(R.id.add_rom_calctype_tablerow);
 
 		String windowTitle = null;
 
@@ -274,7 +274,7 @@ public class RomManagerActivity extends Graph89ActivityBase
 									return;
 								}
 
-								String root = folder + Integer.toString(newInstance.ID);
+								String root = folder + newInstance.ID;
 
 								newInstance.ImageFilePath = root + "/image.img";
 								newInstance.StateFilePath = root + "/image.img.state";

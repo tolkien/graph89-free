@@ -71,8 +71,8 @@ public class FilePickerActivity extends Activity
 
 		setContentView(R.layout.file_picker_main);
 
-		mListView = (ListView) this.findViewById(R.id.file_picker_listview);
-		mInstallFilesButton = (Button) this.findViewById(R.id.file_picker_load_button);
+		mListView = this.findViewById(R.id.file_picker_listview);
+		mInstallFilesButton = this.findViewById(R.id.file_picker_load_button);
 
 		mInstallFilesButton.setVisibility(View.GONE);
 
@@ -106,7 +106,7 @@ public class FilePickerActivity extends Activity
 		if (getIntent().hasExtra(EXTRA_ACCEPTED_FILE_EXTENSIONS))
 		{
 			ArrayList<String> collection = getIntent().getStringArrayListExtra(EXTRA_ACCEPTED_FILE_EXTENSIONS);
-			acceptedFileExtensions = (String[]) collection.toArray(new String[collection.size()]);
+			acceptedFileExtensions = collection.toArray(new String[collection.size()]);
 		}
 		if (getIntent().hasExtra(EXTRA_MULTISELECT))
 		{
@@ -252,7 +252,7 @@ public class FilePickerActivity extends Activity
 
 	private class FilePickerListAdapter extends ArrayAdapter<SelectedFile>
 	{
-		private List<SelectedFile>	mObjects;
+		private final List<SelectedFile>	mObjects;
 
 		public FilePickerListAdapter(Context context, List<SelectedFile> objects)
 		{
@@ -275,7 +275,7 @@ public class FilePickerActivity extends Activity
 				row = convertView;
 			}
 
-			CheckBox select = (CheckBox) row.findViewById(R.id.file_picker_checkbox);
+			CheckBox select = row.findViewById(R.id.file_picker_checkbox);
 			SelectedFile object = mObjects.get(position);
 			select.setTag(position);
 
@@ -305,8 +305,8 @@ public class FilePickerActivity extends Activity
 				});
 			}
 
-			ImageView imageView = (ImageView) row.findViewById(R.id.file_picker_image);
-			TextView textView = (TextView) row.findViewById(R.id.file_picker_text);
+			ImageView imageView = row.findViewById(R.id.file_picker_image);
+			TextView textView = row.findViewById(R.id.file_picker_text);
 			// Set single line
 			textView.setSingleLine(true);
 
@@ -360,7 +360,7 @@ public class FilePickerActivity extends Activity
 
 	private class ExtensionFilenameFilter implements FilenameFilter
 	{
-		private String[]	mExtensions;
+		private final String[]	mExtensions;
 
 		public ExtensionFilenameFilter(String[] extensions)
 		{

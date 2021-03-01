@@ -39,7 +39,7 @@ import com.graph89.common.Util;
 public class PortraitSkin extends SkinBase
 {
 	private static final int	BorderScreenSkin	= 2;
-	private Context				mContext;
+	private final Context				mContext;
 
 	public PortraitSkin(Context context, CalculatorInfoBase calculatorInfo, SkinDefinition skinDefinition) throws IllegalArgumentException
 	{

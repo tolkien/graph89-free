@@ -90,7 +90,7 @@ public final class SeekBarPreference extends DialogPreference implements OnSeekB
 		}
 		else
 		{
-			((TextView) view.findViewById(R.id.dialog_slider_min_value)).setText(Integer.toString(mMinValue) + ValuePost);
+			((TextView) view.findViewById(R.id.dialog_slider_min_value)).setText(mMinValue + ValuePost);
 		}
 
 		if (ValueMAX.length() > 0)
@@ -99,17 +99,17 @@ public final class SeekBarPreference extends DialogPreference implements OnSeekB
 		}
 		else
 		{
-			((TextView) view.findViewById(R.id.dialog_slider_max_value)).setText(Integer.toString(mMaxValue) + ValuePost);
+			((TextView) view.findViewById(R.id.dialog_slider_max_value)).setText(mMaxValue + ValuePost);
 		}
 
 		// Setup SeekBar
-		mSeekBar = (SeekBar) view.findViewById(R.id.dialog_slider_seek_bar);
+		mSeekBar = view.findViewById(R.id.dialog_slider_seek_bar);
 		mSeekBar.setMax(mMaxValue - mMinValue);
 		mSeekBar.setProgress(mCurrentValue - mMinValue);
 		mSeekBar.setOnSeekBarChangeListener(this);
 
 		// Setup text label for current value
-		mValueText = (TextView) view.findViewById(R.id.dialog_slider_current_value);
+		mValueText = view.findViewById(R.id.dialog_slider_current_value);
 		SetValueText();
 
 		return view;
@@ -166,7 +166,7 @@ public final class SeekBarPreference extends DialogPreference implements OnSeekB
 		}
 		else
 		{
-			mValueText.setText(Integer.toString(mCurrentValue) + ValuePost);
+			mValueText.setText(mCurrentValue + ValuePost);
 		}
 	}
 

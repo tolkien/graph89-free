@@ -51,7 +51,7 @@ public class TiEmuErrorCodes
 				return "Not .89u or .rom";
 
 			default:
-				return Integer.toString(code) + " - Unknown...";
+				return code + " - Unknown...";
 		}
 	}
 }
