@@ -19,16 +19,16 @@
 
 package com.graph89.emulationcore;
 
-import java.lang.ref.WeakReference;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v7.app.AppCompatActivity;
 
 import com.graph89.common.AlertControl;
 import com.graph89.common.Util;
 
-import android.app.Activity;
-import android.os.Handler;
-import android.os.Message;
+import java.lang.ref.WeakReference;
 
-public abstract class Graph89ActivityBase extends Activity
+public abstract class Graph89ActivityBase extends AppCompatActivity
 {
 	public static final int		HANDLER_SHOWALERT	= 1;
 	public static final int		MAX_HANDLER_ID		= 1;

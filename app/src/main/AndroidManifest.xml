@@ -24,6 +24,7 @@
         android:theme="@style/Graph89Theme" android:allowBackup="true">
         <activity
             android:name="com.graph89.emulationcore.EmulatorActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:label="Graph 89 Free">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,12 +34,15 @@
         </activity>
         <activity
             android:name="com.graph89.emulationcore.RomManagerActivity"
+            android:theme="@style/Theme.AppCompat"
             android:label="ROM Manager" />
         <activity
             android:name="com.graph89.controls.FilePickerActivity"
+            android:theme="@style/Theme.AppCompat"
             android:label="Add ROM" />
         <activity
             android:name="com.graph89.emulationcore.ConfigurationPage"
+            android:theme="@style/Theme.AppCompat"
             android:label="Settings" />
     </application>
 

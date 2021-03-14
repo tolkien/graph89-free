@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:background="#EE000000"
@@ -18,7 +19,7 @@
             android:adjustViewBounds="true"
             android:maxHeight="40dip"
             android:maxWidth="40dip"
-            android:src="@drawable/ic_launcher" />
+            app:srcCompat="@drawable/ic_launcher" />
 
         <Spinner
             android:id="@+id/controlbar_calctype"
@@ -28,7 +29,6 @@
             android:layout_centerVertical="true" />
 
         <TextView
-            android:id="@+id/controlbar_graph89_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/controlbar_icon"
@@ -40,7 +40,6 @@
     </RelativeLayout>
 
     <ImageView
-        android:id="@+id/controlbar_separator"
         android:layout_width="fill_parent"
         android:layout_height="3dp"
         android:background="#006099" />

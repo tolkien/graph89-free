@@ -19,10 +19,8 @@
 
 package com.graph89.controls;
 
-import java.util.List;
-
-import android.app.Activity;
 import android.content.Context;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
@@ -30,6 +28,8 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 
 import com.Bisha.TI89Emu.R;
+
+import java.util.List;
 
 public class ControlBar
 {
@@ -40,7 +40,7 @@ public class ControlBar
 	public ControlBar(Context context)
 	{
 		mContext = context;
-		Activity activity = (Activity) mContext;
+		AppCompatActivity activity = (AppCompatActivity) mContext;
 
 		mControlBarLayout = activity.findViewById(R.id.emulator_main_controlbar);
 		CalculatorTypeSpinnerInstance = activity.findViewById(R.id.controlbar_calctype);

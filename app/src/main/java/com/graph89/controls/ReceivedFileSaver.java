@@ -19,14 +19,12 @@
 
 package com.graph89.controls;
 
-import java.io.File;
-
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +36,8 @@ import com.Bisha.TI89Emu.R;
 import com.graph89.common.Util;
 import com.graph89.emulationcore.EmulatorActivity;
 import com.graph89.emulationcore.TIEmuThread;
+
+import java.io.File;
 
 public class ReceivedFileSaver
 {
@@ -74,7 +74,7 @@ public class ReceivedFileSaver
 		filenameEdit.setText(TIEmuThread.ReceivedFileName);
 		filenameEdit.setSelection(TIEmuThread.ReceivedFileName.length());
 
-		final AlertDialog d = new AlertDialog.Builder(mContext).setView(view).setTitle("Save Received File").setPositiveButton(android.R.string.ok, new Dialog.OnClickListener()
+		final android.support.v7.app.AlertDialog d = new android.support.v7.app.AlertDialog.Builder(mContext).setView(view).setTitle("Save Received File").setPositiveButton(android.R.string.ok, new Dialog.OnClickListener()
 		{
 			@Override
 			public void onClick(DialogInterface d, int which)

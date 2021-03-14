@@ -19,8 +19,8 @@
 
 package com.graph89.controls;
 
-import android.app.AlertDialog;
 import android.content.Context;
+import android.support.v7.app.AlertDialog;
 import android.text.method.ScrollingMovementMethod;
 import android.text.util.Linkify;
 import android.util.TypedValue;
@@ -48,7 +48,7 @@ public class WhatsNew
 
 		tv = view.findViewById(R.id.whats_new_text);
 		tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
-		final AlertDialog addEditdialog = new AlertDialog.Builder(mContext).setView(view).setTitle("What's New").setPositiveButton(android.R.string.ok, null).create();
+		final android.support.v7.app.AlertDialog addEditdialog = new AlertDialog.Builder(mContext).setView(view).setTitle("What's New").setPositiveButton(android.R.string.ok, null).create();
 		AddText();
 		tv.setMovementMethod(new ScrollingMovementMethod());
 		addEditdialog.show();

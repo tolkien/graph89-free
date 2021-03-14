@@ -34,7 +34,7 @@ public class ConfigurationHelper
 		SharedPreferences.Editor editor = settings.edit();
 
 		editor.putString(key, value);
-		editor.commit();
+		editor.apply();
 	}
 
 	public static void WriteInt(Context context, String key, int value)
@@ -43,7 +43,7 @@ public class ConfigurationHelper
 		SharedPreferences.Editor editor = settings.edit();
 
 		editor.putInt(key, value);
-		editor.commit();
+		editor.apply();
 	}
 
 	public static String GetString(Context context, String key, String defaultValue)

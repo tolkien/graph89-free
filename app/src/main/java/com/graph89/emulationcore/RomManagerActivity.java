@@ -19,18 +19,13 @@
 
 package com.graph89.emulationcore;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Message;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -55,6 +50,11 @@ import com.graph89.common.TiEmuErrorCodes;
 import com.graph89.common.Util;
 import com.graph89.controls.ControlBar;
 import com.graph89.controls.FilePickerActivity;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 public class RomManagerActivity extends Graph89ActivityBase
 {
@@ -225,7 +225,7 @@ public class RomManagerActivity extends Graph89ActivityBase
 			});
 		}
 
-		final AlertDialog addEditdialog = new AlertDialog.Builder(this).setView(view).setTitle(windowTitle).setPositiveButton(android.R.string.ok, null).setNegativeButton(android.R.string.cancel, new Dialog.OnClickListener() {
+		final android.support.v7.app.AlertDialog addEditdialog = new android.support.v7.app.AlertDialog.Builder(this).setView(view).setTitle(windowTitle).setPositiveButton(android.R.string.ok, null).setNegativeButton(android.R.string.cancel, new Dialog.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface d, int which)
 			{
@@ -396,7 +396,7 @@ public class RomManagerActivity extends Graph89ActivityBase
 
 	private void DeleteRom(final int index)
 	{
-		AlertDialog alert = new AlertDialog.Builder(this).setTitle("Warning").setMessage("Are you sure you want to remove this instance?").setPositiveButton(android.R.string.ok, new Dialog.OnClickListener() {
+		android.support.v7.app.AlertDialog alert = new android.support.v7.app.AlertDialog.Builder(this).setTitle("Warning").setMessage("Are you sure you want to remove this instance?").setPositiveButton(android.R.string.ok, new Dialog.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface d, int which)
 			{

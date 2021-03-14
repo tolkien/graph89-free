@@ -20,6 +20,21 @@
 
 package com.graph89.common;
 
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.BitmapFactory.Options;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.os.Environment;
+import android.support.v7.app.AlertDialog;
+
+import com.graph89.emulationcore.EmulatorActivity;
+import com.graph89.emulationcore.Graph89ActivityBase;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -35,21 +50,6 @@ import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.BitmapFactory.Options;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.os.Environment;
-
-import com.graph89.emulationcore.EmulatorActivity;
-import com.graph89.emulationcore.Graph89ActivityBase;
 
 public class Util
 {
@@ -88,14 +88,14 @@ public class Util
 	{
 		if (title == null && text == null) return null;
 		
-		AlertDialog alert = new AlertDialog.Builder(context).setTitle(title).setMessage(text).setPositiveButton(android.R.string.ok, null).create();
+		android.support.v7.app.AlertDialog alert = new android.support.v7.app.AlertDialog.Builder(context).setTitle(title).setMessage(text).setPositiveButton(android.R.string.ok, null).create();
 		alert.show();
 		return alert;
 	}
 
 	public static void ShowAlert(final EmulatorActivity context, String location, Exception e)
 	{
-		final AlertDialog alert = new AlertDialog.Builder(context).setTitle("Error").setMessage("Location: " + location + "\n" + e.getMessage() + "\n" + e.getStackTrace()).setPositiveButton(android.R.string.ok, new Dialog.OnClickListener() {
+		final android.support.v7.app.AlertDialog alert = new AlertDialog.Builder(context).setTitle("Error").setMessage("Location: " + location + "\n" + e.getMessage() + "\n" + e.getStackTrace()).setPositiveButton(android.R.string.ok, new Dialog.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface d, int which)
 			{

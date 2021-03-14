@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
@@ -10,7 +11,6 @@
         android:visibility="visible" />
 
     <LinearLayout
-        android:id="@+id/rom_manager_main_startup_defaults_layout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" 
@@ -18,7 +18,6 @@
         android:layout_margin="5dp">
                
         <TextView
-            android:id="@+id/rom_manager_main_startup_defaults_t1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -31,7 +30,6 @@
             android:orientation="horizontal" >
 
             <TextView
-                android:id="@+id/rom_manager_main_startup_defaults_t4"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -45,7 +43,6 @@
             android:orientation="horizontal" >
 
             <TextView
-                android:id="@+id/rom_manager_main_startup_defaults_t2"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -53,7 +50,6 @@
                 android:layout_weight = "1"/>
 
             <Spinner
-                android:id="@+id/rom_manager_main_startup_defaults_s_portrait"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp" 
@@ -66,7 +62,6 @@
             android:orientation="horizontal" >
 
             <TextView
-                android:id="@+id/rom_manager_main_startup_defaults_t3"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -74,7 +69,6 @@
                 android:text="Landscape Mode, Start: " />
 
             <Spinner
-                android:id="@+id/rom_manager_main_startup_defaults_s_landscape"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp" 
@@ -100,7 +94,7 @@
         android:paddingBottom="2dp"
         android:paddingTop="2dp"
         android:scaleType="fitXY"
-        android:src="@android:drawable/divider_horizontal_dark" />
+        app:srcCompat="@android:drawable/divider_horizontal_dark" />
 
     <ListView
         android:id="@+id/rom_manager_main_rom_list"

@@ -19,8 +19,8 @@
 
 package com.graph89.controls;
 
-import android.app.AlertDialog;
 import android.content.Context;
+import android.support.v7.app.AlertDialog;
 import android.text.util.Linkify;
 import android.util.TypedValue;
 import android.view.LayoutInflater;

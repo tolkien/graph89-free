@@ -16,17 +16,10 @@
 
 package com.graph89.controls;
 
-import java.io.File;
-import java.io.FilenameFilter;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -44,7 +37,14 @@ import android.widget.TextView;
 import com.Bisha.TI89Emu.R;
 import com.graph89.emulationcore.EmulatorActivity;
 
-public class FilePickerActivity extends Activity
+import java.io.File;
+import java.io.FilenameFilter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class FilePickerActivity extends AppCompatActivity
 {
 	public final static String			EXTRA_FILE_PATH					= "file_path";
 	public final static String			EXTRA_SHOW_HIDDEN_FILES			= "show_hidden_files";

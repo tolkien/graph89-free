@@ -20,12 +20,12 @@
 package com.graph89.controls;
 
 import android.content.Context;
+import android.support.v7.widget.AppCompatTextView;
 import android.text.Spannable;
 import android.text.util.Linkify;
 import android.util.AttributeSet;
-import android.widget.TextView;
 
-public class MessageView extends TextView
+public class MessageView extends AppCompatTextView
 {
 	private String	MessageText		= "";
 	private int		MessagePriority	= 0;

@@ -19,16 +19,12 @@
 
 package com.graph89.emulationcore;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Environment;
+import android.support.v7.app.AlertDialog;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.AdapterView;
@@ -48,6 +44,9 @@ import com.graph89.controls.ListItem;
 import com.graph89.controls.ListViewAdapter;
 import com.graph89.controls.ScreenshotTaker;
 import com.graph89.controls.WhatsNew;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ActionsList extends ListView
 {
@@ -131,7 +130,7 @@ public class ActionsList extends ListView
 							String sz80 = "This will clear the whole memory, RAM and Archive. All the data and applications will be erased. \nContinue?"; 
 							
 							String msg = CalculatorTypes.isTilem(EmulatorActivity.ActiveInstance.CalculatorType) ? sz80 : s68k;
-							final AlertDialog alert = new AlertDialog.Builder(mContext).setTitle("Warning").setMessage(msg).setNegativeButton(android.R.string.no, null).setPositiveButton(android.R.string.ok, new Dialog.OnClickListener() {
+							final AlertDialog alert = new android.support.v7.app.AlertDialog.Builder(mContext).setTitle("Warning").setMessage(msg).setNegativeButton(android.R.string.no, null).setPositiveButton(android.R.string.ok, new Dialog.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface d, int which)
 								{
