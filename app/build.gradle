@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.Bisha.TI89Emu"
-        minSdkVersion 9
+        minSdkVersion 17
         targetSdkVersion 26
         ndk {
             abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
@@ -22,6 +22,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.debug
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
         }
     }
     compileOptions {
@@ -36,9 +40,16 @@ android {
         doNotStrip "*/x86/*.so"
         doNotStrip "*/mips/*.so"
     }
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.android.support:appcompat-v7:26.1.0'
+}
+
+tasks.withType(JavaCompile) {
+//    options.compilerArgs += " -Xlint:deprecation"
 }
