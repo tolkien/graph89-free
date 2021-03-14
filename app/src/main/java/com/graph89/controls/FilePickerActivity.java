@@ -18,8 +18,13 @@ package com.graph89.controls;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -33,6 +38,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.Bisha.TI89Emu.R;
 import com.graph89.emulationcore.EmulatorActivity;
@@ -63,6 +69,44 @@ public class FilePickerActivity extends AppCompatActivity
 	private Button						mInstallFilesButton				= null;
 	private boolean						mMultiSelect					= false;
 
+	private static final int PERMISSION_REQUEST_CODE = 1;
+
+	private boolean checkPermission() {
+		int result = ContextCompat.checkSelfPermission(FilePickerActivity.this,
+				android.Manifest.permission.READ_EXTERNAL_STORAGE);
+		if (result == PackageManager.PERMISSION_GRANTED) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	private void requestPermission() {
+		if (ActivityCompat.shouldShowRequestPermissionRationale(FilePickerActivity.this,
+				android.Manifest.permission.READ_EXTERNAL_STORAGE)) {
+			Toast.makeText(FilePickerActivity.this, "Read External Storage permission allows us to do store images. Please allow this permission in App Settings.", Toast.LENGTH_LONG).show();
+		} else {
+			ActivityCompat.requestPermissions(FilePickerActivity.this,
+					new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},
+					PERMISSION_REQUEST_CODE);
+		}
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, String permissions[],
+										   int[] grantResults) {
+		switch (requestCode) {
+			case PERMISSION_REQUEST_CODE:
+				if (grantResults.length > 0 && grantResults[0] ==
+						PackageManager.PERMISSION_GRANTED) {
+					Log.e("value", "Permission Granted, Now you can use local drive .");
+				} else {
+					Log.e("value", "Permission Denied, You cannot use local drive .");
+				}
+				break;
+		}
+	}
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -80,6 +124,22 @@ public class FilePickerActivity extends AppCompatActivity
 		View emptyView = inflator.inflate(R.layout.file_picker_empty_view, null);
 		((ViewGroup) mListView.getParent()).addView(emptyView);
 		mListView.setEmptyView(emptyView);
+
+		if (Build.VERSION.SDK_INT >= 23)
+		{
+			if (checkPermission())
+			{
+				// Code for above or equal 23 API Oriented Device
+				// Your Permission granted already .Do next code
+			} else {
+				requestPermission(); // Code for permission
+			}
+		}
+		else
+		{
+			// Code for Below 23 API Oriented Device
+			// Do next code
+		}
 
 		mFileType = null;
 		mDirectory = new File(DEFAULT_INITIAL_DIRECTORY);
