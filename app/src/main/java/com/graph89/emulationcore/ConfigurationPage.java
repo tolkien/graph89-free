@@ -261,7 +261,7 @@ public class ConfigurationPage extends PreferenceActivity implements OnSharedPre
 
 		editor.putString(CalculatorConfiguration.LCDTypeKey, mActiveInstance.Configuration.UseLCDGrid ? "Dot Matrix" : "Solid");
 
-		editor.commit();
+		editor.apply();
 	}
 
 	private void InitMembers()

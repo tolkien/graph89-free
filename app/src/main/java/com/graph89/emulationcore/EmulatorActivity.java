@@ -348,11 +348,9 @@ public class EmulatorActivity extends Graph89ActivityBase
 
 	private void CheckOrientation()
 	{
-		boolean newAndroid = Build.VERSION.SDK_INT > Build.VERSION_CODES.FROYO;
-
-		int auto = newAndroid ? ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR : ActivityInfo.SCREEN_ORIENTATION_SENSOR;
-		int portrait = newAndroid ? ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT : ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
-		int landscape = newAndroid ? ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE : ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
+		int auto = ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR;
+		int portrait = ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT;
+		int landscape = ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE;
 
 		int calcType = ActiveInstance.CalculatorType;
 
@@ -617,7 +615,7 @@ public class EmulatorActivity extends Graph89ActivityBase
 		{
 			SharedPreferences.Editor editor = settings.edit();
 			editor.putString("WhatsNew1.1.3.3Shown", "Shown");
-			editor.commit();
+			editor.apply();
 			WhatsNew wn = new WhatsNew(this);
 			wn.Show();
 		}
@@ -648,7 +646,7 @@ public class EmulatorActivity extends Graph89ActivityBase
 					SharedPreferences.Editor editor = settings.edit();
 					editor.remove("VOLUME_AS_MENU");
 					UseVolumeAsMenu = false;
-					editor.commit();
+					editor.apply();
 				}
 			}).setPositiveButton(android.R.string.yes, new Dialog.OnClickListener() {
 				@Override
@@ -657,7 +655,7 @@ public class EmulatorActivity extends Graph89ActivityBase
 					SharedPreferences settings = getSharedPreferences("TI_EMU_DH", Context.MODE_PRIVATE);
 					SharedPreferences.Editor editor = settings.edit();
 					editor.putBoolean("VOLUME_AS_MENU", true);
-					editor.commit();
+					editor.apply();
 					UseVolumeAsMenu = true;
 				}
 			}).create();

@@ -49,6 +49,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 
 public class FilePickerActivity extends AppCompatActivity
 {
@@ -439,7 +440,8 @@ public class FilePickerActivity extends AppCompatActivity
 			{
 				for (int i = 0; i < mExtensions.length; i++)
 				{
-					if (filename.toLowerCase().endsWith(mExtensions[i].toLowerCase()))
+					if (filename.toLowerCase(java.util.Locale.getDefault()).endsWith(
+							mExtensions[i].toLowerCase(java.util.Locale.getDefault())))
 					{
 						// The filename ends with the extension
 						return true;

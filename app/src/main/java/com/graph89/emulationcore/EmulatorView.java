@@ -60,11 +60,11 @@ public class EmulatorView extends View implements OnTouchListener
 
 		if (!EmulatorActivity.IsEmulating) return;
 
-		if (EmulatorActivity.CurrentSkin.CanvasDimensions.Height != canvas.getHeight() || EmulatorActivity.CurrentSkin.CanvasDimensions.Width != canvas.getWidth())
+		if (EmulatorActivity.CurrentSkin.CanvasDimensions.Height != getHeight() || EmulatorActivity.CurrentSkin.CanvasDimensions.Width != getWidth())
 		{
 			try
 			{
-				EmulatorActivity.CurrentSkin.Init(canvas.getWidth(), canvas.getHeight());
+				EmulatorActivity.CurrentSkin.Init(getWidth(), getHeight());
 			}
 			catch (IOException e)
 			{

@@ -63,7 +63,7 @@ public class BackwardCompatibility
 
 			SharedPreferences.Editor editor = settings.edit();
 			editor.remove("IMG");
-			editor.commit();
+			editor.apply();
 		}	
 	}
 }
