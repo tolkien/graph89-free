@@ -48,18 +48,8 @@ public class Directories
 		return Util.GetMediaRootFolder(activity) + "graph89/screenshots/";
 	}
 
-	public static String getLicenceFile(Graph89ActivityBase activity)
-	{
-		return Util.GetMediaRootFolder(activity) + "graph89/licence.lic";
-	}
-
 	public static String getReceivedDirectory(Graph89ActivityBase activity)
 	{
 		return Util.GetMediaRootFolder(activity) + "graph89/received/";
-	}
-
-	public static String getBackupDirectory(Graph89ActivityBase activity)
-	{
-		return Util.GetMediaRootFolder(activity) + "graph89/backup/";
 	}
 }

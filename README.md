@@ -33,4 +33,10 @@ Mar 14, 2021
    lint reports that there are some layout elements of API 11 or higher used.
  4. add READ_EXTERNAL_STORAGE check and request handler at FilePickerActivity
    It was helped from https://stackoverflow.com/questions/33162152/storage-permission-error-in-marshmallow
-    
+
+ Mar 16, 2021
+ 1. on android 11, takescreenshot feature is partially working
+  see https://stackoverflow.com/questions/61406818/filenotfoundexception-open-failed-eperm-operation-not-permitted-during-saving
+      https://darkstart.tistory.com/66
+      https://stackoverflow.com/questions/56904485/how-to-save-an-image-in-android-q-using-mediastore
+ 2. change minSdkVersion from 17 to 19, compileSdkVersion from 26 to 29

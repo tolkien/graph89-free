@@ -1,0 +1,1347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="5" by="lint 4.1.2" client="gradle" variant="all" version="4.1.2">
+
+    <issue
+        id="ResAuto"
+        message="Suspicious namespace: Did you mean `http://schemas.android.com/apk/res-auto`?"
+        errorLine1="    xmlns:seek=&quot;http://schemas.android.com/apk/res-auto/com.graph89.controls.SeekBarPreference&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="3"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="Instantiatable"
+        message="`SeekBarPreference` must extend android.view.View"
+        errorLine1="        &lt;com.graph89.controls.SeekBarPreference"
+        errorLine2="        ^">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="14"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="Instantiatable"
+        message="`AmbilWarnaPreference` must extend android.view.View"
+        errorLine1="        &lt;com.graph89.controls.AmbilWarnaPreference"
+        errorLine2="        ^">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="92"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="OldTargetApi"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
+        errorLine1="        targetSdkVersion 26"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="14"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="InflateParams"
+        message="Avoid passing `null` as the view root (needed to resolve layout parameters on the inflated layout&apos;s root element)"
+        errorLine1="  View emptyView = inflator.inflate(R.layout.file_picker_empty_view, null);"
+        errorLine2="                                                                     ~~~~">
+        <location
+            file="src\main\java\com\graph89\controls\FilePickerActivity.java"
+            line="125"
+            column="70"/>
+    </issue>
+
+    <issue
+        id="InflateParams"
+        message="Avoid passing `null` as the view root (needed to resolve layout parameters on the inflated layout&apos;s root element)"
+        errorLine1="  View view = inflater.inflate(R.layout.dialog_slider, null);"
+        errorLine2="                                                       ~~~~">
+        <location
+            file="src\main\java\com\graph89\controls\SeekBarPreference.java"
+            line="83"
+            column="56"/>
+    </issue>
+
+    <issue
+        id="AllowBackup"
+        message="On SDK version 23 and up, your app data will be automatically backed up and restored on app install. Consider adding the attribute `android:fullBackupContent` to specify an `@xml` resource which configures which files to backup. More info: https://developer.android.com/training/backup/autosyncapi.html"
+        errorLine1="    &lt;application"
+        errorLine2="     ~~~~~~~~~~~">
+        <location
+            file="src\main\AndroidManifest.xml"
+            line="19"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="StaticFieldLeak"
+        message="Do not place Android context classes in static fields (static reference to `UIStateManager` which has field `mContext` pointing to `Context`); this is a memory leak"
+        errorLine1=" public static UIStateManager    UIStateManagerObj    = null;"
+        errorLine2="        ~~~~~~">
+        <location
+            file="src\main\java\com\graph89\emulationcore\EmulatorActivity.java"
+            line="97"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="StaticFieldLeak"
+        message="Do not place Android context classes in static fields (static reference to `CalculatorInstanceHelper` which has field `mContext` pointing to `Context`); this is a memory leak"
+        errorLine1=" public static CalculatorInstanceHelper  CalculatorInstances    = null;"
+        errorLine2="        ~~~~~~">
+        <location
+            file="src\main\java\com\graph89\emulationcore\EmulatorActivity.java"
+            line="100"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="InefficientWeight"
+        message="Use a `layout_width` of `0dp` instead of `fill_parent` for better performance"
+        errorLine1="        android:layout_width=&quot;fill_parent&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\file_picker_list_item.xml"
+            line="44"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `#EE000000` with a theme that also paints a background (inferred theme is `@style/Graph89Theme`)"
+        errorLine1="    android:background=&quot;#EE000000&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\controlbar.xml"
+            line="5"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="UselessParent"
+        message="This `RelativeLayout` layout or its `FrameLayout` parent is possibly useless"
+        errorLine1="    &lt;RelativeLayout"
+        errorLine2="     ~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\ambilwarna_dialog.xml"
+            line="8"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="IconDipSize"
+        message="The image `ambilwarna_cursor.png` varies significantly in its density-independent (dip) size across the various density versions: drawable-hdpi\\ambilwarna_cursor.png: 8x8 dp (12x12 px), drawable-ldpi\\ambilwarna_cursor.png: 8x8 dp (6x6 px), drawable-xhdpi\\ambilwarna_cursor.png: 9x9 dp (18x18 px)">
+        <location
+            file="src\main\res\drawable-hdpi\ambilwarna_cursor.png"/>
+        <location
+            file="src\main\res\drawable-ldpi\ambilwarna_cursor.png"/>
+        <location
+            file="src\main\res\drawable-xhdpi\ambilwarna_cursor.png"/>
+    </issue>
+
+    <issue
+        id="IconDipSize"
+        message="The image `ambilwarna_target.png` varies significantly in its density-independent (dip) size across the various density versions: drawable-hdpi\\ambilwarna_target.png: 13x13 dp (20x20 px), drawable-ldpi\\ambilwarna_target.png: 13x13 dp (10x10 px), drawable-xhdpi\\ambilwarna_target.png: 15x15 dp (30x30 px)">
+        <location
+            file="src\main\res\drawable-hdpi\ambilwarna_target.png"/>
+        <location
+            file="src\main\res\drawable-ldpi\ambilwarna_target.png"/>
+        <location
+            file="src\main\res\drawable-xhdpi\ambilwarna_target.png"/>
+    </issue>
+
+    <issue
+        id="IconDipSize"
+        message="The image `appfile.png` varies significantly in its density-independent (dip) size across the various density versions: drawable-hdpi\\appfile.png: 32x32 dp (48x48 px), drawable-ldpi\\appfile.png: 32x32 dp (24x24 px), drawable-mdpi\\appfile.png: 32x32 dp (32x32 px), drawable-xhdpi\\appfile.png: 24x24 dp (48x48 px)">
+        <location
+            file="src\main\res\drawable-xhdpi\appfile.png"/>
+        <location
+            file="src\main\res\drawable-ldpi\appfile.png"/>
+        <location
+            file="src\main\res\drawable-mdpi\appfile.png"/>
+        <location
+            file="src\main\res\drawable-hdpi\appfile.png"/>
+    </issue>
+
+    <issue
+        id="IconDipSize"
+        message="The image `folder.png` varies significantly in its density-independent (dip) size across the various density versions: drawable-hdpi\\folder.png: 32x32 dp (48x48 px), drawable-ldpi\\folder.png: 32x32 dp (24x24 px), drawable-mdpi\\folder.png: 32x32 dp (32x32 px), drawable-xhdpi\\folder.png: 24x24 dp (48x48 px)">
+        <location
+            file="src\main\res\drawable-xhdpi\folder.png"/>
+        <location
+            file="src\main\res\drawable-mdpi\folder.png"/>
+        <location
+            file="src\main\res\drawable-ldpi\folder.png"/>
+        <location
+            file="src\main\res\drawable-hdpi\folder.png"/>
+    </issue>
+
+    <issue
+        id="IconDipSize"
+        message="The image `romfile.png` varies significantly in its density-independent (dip) size across the various density versions: drawable-hdpi\\romfile.png: 32x32 dp (48x48 px), drawable-ldpi\\romfile.png: 32x32 dp (24x24 px), drawable-mdpi\\romfile.png: 32x32 dp (32x32 px), drawable-xhdpi\\romfile.png: 24x24 dp (48x48 px)">
+        <location
+            file="src\main\res\drawable-xhdpi\romfile.png"/>
+        <location
+            file="src\main\res\drawable-ldpi\romfile.png"/>
+        <location
+            file="src\main\res\drawable-mdpi\romfile.png"/>
+        <location
+            file="src\main\res\drawable-hdpi\romfile.png"/>
+    </issue>
+
+    <issue
+        id="IconDuplicatesConfig"
+        message="The `appfile.png` icon has identical contents in the following configuration folders: drawable-hdpi, drawable-xhdpi">
+        <location
+            file="src\main\res\drawable-xhdpi\appfile.png"/>
+        <location
+            file="src\main\res\drawable-hdpi\appfile.png"/>
+    </issue>
+
+    <issue
+        id="IconDuplicatesConfig"
+        message="The `folder.png` icon has identical contents in the following configuration folders: drawable-hdpi, drawable-xhdpi">
+        <location
+            file="src\main\res\drawable-xhdpi\folder.png"/>
+        <location
+            file="src\main\res\drawable-hdpi\folder.png"/>
+    </issue>
+
+    <issue
+        id="IconDuplicatesConfig"
+        message="The `romfile.png` icon has identical contents in the following configuration folders: drawable-hdpi, drawable-xhdpi">
+        <location
+            file="src\main\res\drawable-xhdpi\romfile.png"/>
+        <location
+            file="src\main\res\drawable-hdpi\romfile.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/ambilwarna_arrow_down.png` in densityless folder">
+        <location
+            file="src\main\res\drawable\ambilwarna_arrow_down.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/ambilwarna_arrow_right.png` in densityless folder">
+        <location
+            file="src\main\res\drawable\ambilwarna_arrow_right.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/ambilwarna_cursor.png` in densityless folder">
+        <location
+            file="src\main\res\drawable\ambilwarna_cursor.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/ambilwarna_hue.png` in densityless folder">
+        <location
+            file="src\main\res\drawable\ambilwarna_hue.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/ambilwarna_target.png` in densityless folder">
+        <location
+            file="src\main\res\drawable\ambilwarna_target.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/backbutton.png` in densityless folder">
+        <location
+            file="src\main\res\drawable\backbutton.png"/>
+    </issue>
+
+    <issue
+        id="IconDensities"
+        message="Missing the following drawables in `drawable-mdpi`: ambilwarna_arrow_down.png, ambilwarna_arrow_right.png, ambilwarna_cursor.png, ambilwarna_target.png">
+        <location
+            file="src\main\res\drawable-mdpi"/>
+    </issue>
+
+    <issue
+        id="IconMissingDensityFolder"
+        message="Missing density variation folders in `src\\main\\res`: drawable-xxhdpi">
+        <location
+            file="src\main\res"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute"
+        errorLine1="        &lt;EditText"
+        errorLine2="         ~~~~~~~~">
+        <location
+            file="src\main\res\layout\rom_manager_add_rom.xml"
+            line="90"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute"
+        errorLine1="        &lt;EditText"
+        errorLine2="         ~~~~~~~~">
+        <location
+            file="src\main\res\layout\save_received_file.xml"
+            line="34"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute"
+        errorLine1="        &lt;EditText"
+        errorLine2="         ~~~~~~~~">
+        <location
+            file="src\main\res\layout\take_screenshot.xml"
+            line="34"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="ClickableViewAccessibility"
+        message="`onTouch` should call `View#performClick` when a click is detected"
+        errorLine1="   public boolean onTouch(View v, MotionEvent event)"
+        errorLine2="                  ~~~~~~~">
+        <location
+            file="src\main\java\com\graph89\controls\AmbilWarnaDialog.java"
+            line="86"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="ClickableViewAccessibility"
+        message="Custom view ``AmbilWarnaKotak`` has `setOnTouchListener` called on it but does not override `performClick`"
+        errorLine1="  viewSatVal.setOnTouchListener(new View.OnTouchListener()"
+        errorLine2="  ^">
+        <location
+            file="src\main\java\com\graph89\controls\AmbilWarnaDialog.java"
+            line="114"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="ClickableViewAccessibility"
+        message="`onTouch` should call `View#performClick` when a click is detected"
+        errorLine1="   public boolean onTouch(View v, MotionEvent event)"
+        errorLine2="                  ~~~~~~~">
+        <location
+            file="src\main\java\com\graph89\controls\AmbilWarnaDialog.java"
+            line="117"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="        &lt;ImageView"
+        errorLine2="         ~~~~~~~~~">
+        <location
+            file="src\main\res\layout\ambilwarna_dialog.xml"
+            line="24"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="  &lt;ImageView"
+        errorLine2="   ~~~~~~~~~">
+        <location
+            file="src\main\res\layout-land\ambilwarna_dialog.xml"
+            line="31"
+            column="4"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="        &lt;ImageView"
+        errorLine2="         ~~~~~~~~~">
+        <location
+            file="src\main\res\layout\ambilwarna_dialog.xml"
+            line="33"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="        &lt;ImageView"
+        errorLine2="         ~~~~~~~~~">
+        <location
+            file="src\main\res\layout\ambilwarna_dialog.xml"
+            line="40"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1=" &lt;ImageView"
+        errorLine2="  ~~~~~~~~~">
+        <location
+            file="src\main\res\layout-land\ambilwarna_dialog.xml"
+            line="59"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="            &lt;ImageView"
+        errorLine2="             ~~~~~~~~~">
+        <location
+            file="src\main\res\layout\ambilwarna_dialog.xml"
+            line="63"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1=" &lt;ImageView"
+        errorLine2="  ~~~~~~~~~">
+        <location
+            file="src\main\res\layout-land\ambilwarna_dialog.xml"
+            line="69"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1=" &lt;ImageView"
+        errorLine2="  ~~~~~~~~~">
+        <location
+            file="src\main\res\layout-land\ambilwarna_dialog.xml"
+            line="77"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="        &lt;ImageView"
+        errorLine2="         ~~~~~~~~~">
+        <location
+            file="src\main\res\layout\controlbar.xml"
+            line="13"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="    &lt;ImageView"
+        errorLine2="     ~~~~~~~~~">
+        <location
+            file="src\main\res\layout\controlbar.xml"
+            line="42"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="    &lt;ImageView"
+        errorLine2="     ~~~~~~~~~">
+        <location
+            file="src\main\res\layout\file_picker_list_item.xml"
+            line="32"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="            &lt;ImageButton"
+        errorLine2="             ~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\rom_manager_add_rom.xml"
+            line="22"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="        &lt;ImageView"
+        errorLine2="         ~~~~~~~~~">
+        <location
+            file="src\main\res\layout\rom_manager_main.xml"
+            line="78"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="    &lt;ImageView"
+        errorLine2="     ~~~~~~~~~">
+        <location
+            file="src\main\res\layout\rom_manager_main.xml"
+            line="91"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`"
+        errorLine1="        &lt;EditText"
+        errorLine2="         ~~~~~~~~">
+        <location
+            file="src\main\res\layout\rom_manager_add_rom.xml"
+            line="90"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`"
+        errorLine1="        &lt;EditText"
+        errorLine2="         ~~~~~~~~">
+        <location
+            file="src\main\res\layout\save_received_file.xml"
+            line="34"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`"
+        errorLine1="        &lt;EditText"
+        errorLine2="         ~~~~~~~~">
+        <location
+            file="src\main\res\layout\take_screenshot.xml"
+            line="34"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="  filenameEdit.setText(dateNow + &quot;.png&quot;);"
+        errorLine2="                       ~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\java\com\graph89\controls\ScreenshotTaker.java"
+            line="74"
+            column="24"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="  filenameEdit.setText(dateNow + &quot;.png&quot;);"
+        errorLine2="                                 ~~~~~~">
+        <location
+            file="src\main\java\com\graph89\controls\ScreenshotTaker.java"
+            line="74"
+            column="34"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="   ((TextView) view.findViewById(R.id.dialog_slider_min_value)).setText(mMinValue + ValuePost);"
+        errorLine2="                                                                        ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\java\com\graph89\controls\SeekBarPreference.java"
+            line="93"
+            column="73"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="   ((TextView) view.findViewById(R.id.dialog_slider_max_value)).setText(mMaxValue + ValuePost);"
+        errorLine2="                                                                        ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\java\com\graph89\controls\SeekBarPreference.java"
+            line="102"
+            column="73"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="   mValueText.setText(mCurrentValue + ValuePost);"
+        errorLine2="                      ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\java\com\graph89\controls\SeekBarPreference.java"
+            line="169"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Graph89&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Graph89&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\controlbar.xml"
+            line="36"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;No compatible files found in this directory&quot;, should use `@string` resource"
+        errorLine1="    android:text=&quot;No compatible files found in this directory&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\file_picker_empty_view.xml"
+            line="22"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;filename&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;filename&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\file_picker_list_item.xml"
+            line="50"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Install Selected Items&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Install Selected Items&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\file_picker_main.xml"
+            line="19"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;ROM File:&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;ROM File:&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\rom_manager_add_rom.xml"
+            line="41"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Browse&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Browse&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\rom_manager_add_rom.xml"
+            line="49"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Location&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Location&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\rom_manager_add_rom.xml"
+            line="57"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Calculator Type:&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Calculator Type:&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\rom_manager_add_rom.xml"
+            line="71"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;ROM Title:&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;ROM Title:&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\rom_manager_add_rom.xml"
+            line="88"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Autostart Options&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Autostart Options&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\rom_manager_main.xml"
+            line="24"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;If Graph89 is started while the phone is being held in:&quot;, should use `@string` resource"
+        errorLine1="                android:text=&quot;If Graph89 is started while the phone is being held in:&quot; "
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\rom_manager_main.xml"
+            line="36"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Portrait Mode, Start: &quot;, should use `@string` resource"
+        errorLine1="                android:text=&quot;Portrait Mode, Start: &quot; "
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\rom_manager_main.xml"
+            line="49"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Landscape Mode, Start: &quot;, should use `@string` resource"
+        errorLine1="                android:text=&quot;Landscape Mode, Start: &quot; />"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\rom_manager_main.xml"
+            line="69"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Add ROM&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Add ROM&quot; />"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\rom_manager_main.xml"
+            line="89"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;No ROMs are installed\n\nClick &apos;Add ROM&apos; to install at least one\n\nAccepted File Formats:\n  *.rom, *.89u, *.tib&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;No ROMs are installed\n\nClick &amp;apos;Add ROM&amp;apos; to install at least one\n\nAccepted File Formats:\n  *.rom, *.89u, *.tib&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\rom_manager_main.xml"
+            line="112"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Location: &quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Location: &quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\save_received_file.xml"
+            line="13"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;TextView&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;TextView&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\save_received_file.xml"
+            line="21"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;File: &quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;File: &quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\save_received_file.xml"
+            line="32"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Keypress Feedback&quot;, should use `@string` resource"
+        errorLine1="    &lt;PreferenceCategory android:title=&quot;Keypress Feedback&quot; >"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="12"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Haptic Feedback&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;Haptic Feedback&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="20"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Acoustic Feedback&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;Acoustic Feedback&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="28"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Display Settings&quot;, should use `@string` resource"
+        errorLine1="        android:title=&quot;Display Settings&quot; >"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="33"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Zoom Mode&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;Zoom Mode&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="39"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Screen Scale&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;Screen Scale&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="47"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;LCD Type&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;LCD Type&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="56"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Enable Grayscale&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;Enable Grayscale&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="62"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Skin&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;Skin&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="69"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Skin&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;Skin&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="76"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Skin&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;Skin&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="83"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Orientation&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;Orientation&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="90"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;OFF Pixel Color&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;OFF Pixel Color&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="96"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;ON Pixel Color&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;ON Pixel Color&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="102"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;LCD Grid Color&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;LCD Grid Color&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="108"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;LCD Background Color&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;LCD Background Color&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="114"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Emulation Settings&quot;, should use `@string` resource"
+        errorLine1="    &lt;PreferenceCategory android:title=&quot;Emulation Settings&quot; >"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="118"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Auto Off&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;Auto Off&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="126"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Exit on Screen Off&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;Exit on Screen Off&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="134"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Save State on exit&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;Save State on exit&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="140"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;CPU Speed&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;CPU Speed&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="148"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Overclock when &apos;Busy&apos;&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;Overclock when &amp;apos;Busy&amp;apos;&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="156"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Energy Save&quot;, should use `@string` resource"
+        errorLine1="            android:title=&quot;Energy Save&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\settings.xml"
+            line="162"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Location: &quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Location: &quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\take_screenshot.xml"
+            line="13"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;TextView&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;TextView&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\take_screenshot.xml"
+            line="21"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;File: &quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;File: &quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\take_screenshot.xml"
+            line="32"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="RtlSymmetry"
+        message="When you define `paddingRight` you should probably also define `paddingLeft` for right-to-left symmetry"
+        errorLine1="  android:paddingRight=&quot;@dimen/ambilwarna_spacer&quot;"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout-land\ambilwarna_dialog.xml"
+            line="21"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:paddingRight` with `android:paddingEnd=&quot;@dimen/ambilwarna_spacer&quot;` to better support right-to-left layouts"
+        errorLine1="  android:paddingRight=&quot;@dimen/ambilwarna_spacer&quot;"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout-land\ambilwarna_dialog.xml"
+            line="21"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;@dimen/ambilwarna_spacer&quot;` to better support right-to-left layouts"
+        errorLine1="            android:layout_marginLeft=&quot;@dimen/ambilwarna_spacer&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\ambilwarna_dialog.xml"
+            line="28"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_toRightOf` with `android:layout_toEndOf=&quot;@id/ambilwarna_viewSatBri&quot;` to better support right-to-left layouts"
+        errorLine1="            android:layout_toRightOf=&quot;@id/ambilwarna_viewSatBri&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\ambilwarna_dialog.xml"
+            line="29"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_toRightOf` with `android:layout_toEndOf=&quot;@id/ambilwarna_state&quot;` to better support right-to-left layouts"
+        errorLine1="  android:layout_toRightOf=&quot;@id/ambilwarna_state&quot;"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout-land\ambilwarna_dialog.xml"
+            line="49"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_toRightOf` with `android:layout_toEndOf=&quot;@id/ambilwarna_viewSatBri&quot;` to better support right-to-left layouts"
+        errorLine1="  android:layout_toRightOf=&quot;@id/ambilwarna_viewSatBri&quot;"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout-land\ambilwarna_dialog.xml"
+            line="63"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;@dimen/ambilwarna_spacer&quot;` to better support right-to-left layouts"
+        errorLine1="  android:layout_marginLeft=&quot;@dimen/ambilwarna_spacer&quot;"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout-land\ambilwarna_dialog.xml"
+            line="64"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginRight` with `android:layout_marginEnd=&quot;6dp&quot;` to better support right-to-left layouts"
+        errorLine1="    android:layout_marginRight=&quot;6dp&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\ambilwarna_pref_widget.xml"
+            line="8"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_alignParentLeft` with `android:layout_alignParentStart=&quot;true&quot;` to better support right-to-left layouts"
+        errorLine1="            android:layout_alignParentLeft=&quot;true&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\controlbar.xml"
+            line="17"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_alignParentRight` with `android:layout_alignParentEnd=&quot;true&quot;` to better support right-to-left layouts"
+        errorLine1="            android:layout_alignParentRight=&quot;true&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\controlbar.xml"
+            line="28"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_toRightOf` with `android:layout_toEndOf=&quot;@+id/controlbar_icon&quot;` to better support right-to-left layouts"
+        errorLine1="            android:layout_toRightOf=&quot;@+id/controlbar_icon&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\controlbar.xml"
+            line="35"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_alignParentLeft` with `android:layout_alignParentStart=&quot;true&quot;` to better support right-to-left layouts"
+        errorLine1="  android:layout_alignParentLeft=&quot;true&quot;"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\dialog_slider.xml"
+            line="31"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_alignParentRight` with `android:layout_alignParentEnd=&quot;true&quot;` to better support right-to-left layouts"
+        errorLine1="  android:layout_alignParentRight=&quot;true&quot;"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\dialog_slider.xml"
+            line="39"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;5dip&quot;` to better support right-to-left layouts"
+        errorLine1="        android:layout_marginLeft=&quot;5dip&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\file_picker_list_item.xml"
+            line="37"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales"
+        errorLine1="        android:layout_gravity=&quot;left|center_vertical&quot;"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\file_picker_list_item.xml"
+            line="46"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;10dip&quot;` to better support right-to-left layouts"
+        errorLine1="        android:layout_marginLeft=&quot;10dip&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\file_picker_list_item.xml"
+            line="47"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_alignParentRight` with `android:layout_alignParentEnd=&quot;true&quot;` to better support right-to-left layouts"
+        errorLine1="                android:layout_alignParentRight=&quot;true&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\rom_manager_add_rom.xml"
+            line="26"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;@dimen/padding_medium&quot;` to better support right-to-left layouts"
+        errorLine1="            android:layout_marginLeft=&quot;@dimen/padding_medium&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\save_received_file.xml"
+            line="11"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginRight` with `android:layout_marginEnd=&quot;@dimen/padding_large&quot;` to better support right-to-left layouts"
+        errorLine1="            android:layout_marginRight=&quot;@dimen/padding_large&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\save_received_file.xml"
+            line="12"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;@dimen/padding_medium&quot;` to better support right-to-left layouts"
+        errorLine1="            android:layout_marginLeft=&quot;@dimen/padding_medium&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\save_received_file.xml"
+            line="30"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginRight` with `android:layout_marginEnd=&quot;@dimen/padding_large&quot;` to better support right-to-left layouts"
+        errorLine1="            android:layout_marginRight=&quot;@dimen/padding_large&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\save_received_file.xml"
+            line="31"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;@dimen/padding_medium&quot;` to better support right-to-left layouts"
+        errorLine1="            android:layout_marginLeft=&quot;@dimen/padding_medium&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\take_screenshot.xml"
+            line="11"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginRight` with `android:layout_marginEnd=&quot;@dimen/padding_large&quot;` to better support right-to-left layouts"
+        errorLine1="            android:layout_marginRight=&quot;@dimen/padding_large&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\take_screenshot.xml"
+            line="12"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;@dimen/padding_medium&quot;` to better support right-to-left layouts"
+        errorLine1="            android:layout_marginLeft=&quot;@dimen/padding_medium&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\take_screenshot.xml"
+            line="30"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginRight` with `android:layout_marginEnd=&quot;@dimen/padding_large&quot;` to better support right-to-left layouts"
+        errorLine1="            android:layout_marginRight=&quot;@dimen/padding_large&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\res\layout\take_screenshot.xml"
+            line="31"
+            column="13"/>
+    </issue>
+
+</issues>

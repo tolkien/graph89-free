@@ -5,12 +5,12 @@ android {
         debug {
         }
     }
-    compileSdkVersion 26
+    compileSdkVersion 29
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.Bisha.TI89Emu"
-        minSdkVersion 17
+        minSdkVersion 19
         targetSdkVersion 26
         ndk {
             abiFilters "armeabi", "armeabi-v7a", "x86", "mips"

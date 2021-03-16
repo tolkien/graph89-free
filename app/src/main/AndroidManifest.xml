@@ -13,15 +13,14 @@
         android:smallScreens="true"
         android:xlargeScreens="true" />
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        tools:ignore="ScopedStorage" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:icon="@drawable/ic_launcher"
         android:label="Graph 89 Free"
-        android:theme="@style/Graph89Theme" android:allowBackup="true">
+        android:theme="@style/Graph89Theme">
         <activity
             android:name="com.graph89.emulationcore.EmulatorActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
