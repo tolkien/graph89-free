@@ -599,11 +599,11 @@ public class EmulatorActivity extends Graph89ActivityBase
 
 	public void StartGallery()
 	{
-		if (ScreenshotTaker.LastFile == null) return;
+		if (ScreenshotTaker.LastFile == Uri.EMPTY) return;
 
 		Intent intent = new Intent();
 		intent.setAction(android.content.Intent.ACTION_VIEW);
-		intent.setDataAndType(Uri.fromFile(ScreenshotTaker.LastFile), "image/png");
+		intent.setDataAndType(ScreenshotTaker.LastFile, "image/png");
 		startActivity(intent);
 	}
 

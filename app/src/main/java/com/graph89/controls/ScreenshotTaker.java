@@ -55,7 +55,7 @@ public class ScreenshotTaker
 	private Context		mContext			= null;
 	private String		mScreenshotFolder	= null;
 
-	public static File	LastFile			= null;
+	public static Uri	LastFile			= Uri.EMPTY;
 
 	public ScreenshotTaker(Context context, String screenshotFolder)
 	{
@@ -126,7 +126,6 @@ public class ScreenshotTaker
 								try
 								{
 									OutputStream fos;
-									File f = null;
 
 									if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
 										ContentResolver resolver = mContext.getContentResolver();
@@ -136,42 +135,41 @@ public class ScreenshotTaker
 										contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES);
 										Uri imageUri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
 										fos = resolver.openOutputStream(Objects.requireNonNull(imageUri));
+										LastFile = imageUri;
 									} else {
-										f = new File(mScreenshotFolder, filename);
+										final File f = new File(mScreenshotFolder, filename);
 										f.getParentFile().mkdirs();
 										fos = new FileOutputStream(f);
+										LastFile = Uri.fromFile(f);
 									}
 									image.compress(Bitmap.CompressFormat.PNG, 90, fos);
 									Objects.requireNonNull(fos).close();
 
-									if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-									} else {
-										MediaScannerConnection.scanFile(mContext,
-												new String[] { f.getAbsolutePath() }, null,
-												new MediaScannerConnection.OnScanCompletedListener()
-												{
-													public void onScanCompleted(String path, Uri uri) { }
-												});
-
-										LastFile = f;
-									}
-
+									MediaScannerConnection.scanFile(mContext,
+											new String[] { LastFile.getPath() },
+											new String[] { "image/png" },
+											new MediaScannerConnection.OnScanCompletedListener()
+											{
+												public void onScanCompleted(String path, Uri uri) { }
+											});
 									activity.HideKeyboard();
 
 									// keyboard doesn't hide. Delay the new
 									// intent to give it time to hide.
 									Timer timer = new Timer();
 									timer.schedule(new TimerTask()
-									{
-										@Override
-										public void run()
-										{
-											activity.HandlerStartGallery();
-										}
-									}, 400);
+												   {
+													   @Override
+													   public void run()
+													   {
+														   activity.HandlerStartGallery();
+													   }
+												   },
+											400);
 								}
 								catch (Exception e)
 								{
+									LastFile = Uri.EMPTY;
 									Util.ShowAlert((EmulatorActivity) mContext, "ScreenshotTaker ShowDialog", e);
 								}
 							}
