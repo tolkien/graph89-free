@@ -174,6 +174,9 @@ public class Util
 
 	public static String GetInternalAppStorage(Graph89ActivityBase activity)
 	{
+	    if (activity == null)
+	        return null;
+
 		File f = activity.getExternalFilesDir(null);
 		if (f == null)
 		{

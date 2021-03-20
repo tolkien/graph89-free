@@ -29,7 +29,6 @@ import android.graphics.Bitmap;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -118,7 +117,6 @@ public class ScreenshotTaker
 						if (filename.length() > 0)
 						{
 							if (!filename.endsWith(".png")) filename += ".png";
-							//filename = mScreenshotFolder + filename;
 
 							Bitmap image = EmulatorActivity.CurrentSkin.Screen.getScreenShot();
 							if (image != null)
@@ -132,7 +130,7 @@ public class ScreenshotTaker
 										ContentValues contentValues = new ContentValues();
 										contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, filename);
 										contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "image/png");
-										contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES);
+										contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH, mScreenshotFolder);
 										Uri imageUri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
 										fos = resolver.openOutputStream(Objects.requireNonNull(imageUri));
 										LastFile = imageUri;
