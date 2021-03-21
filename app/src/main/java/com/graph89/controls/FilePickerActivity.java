@@ -70,26 +70,26 @@ public class FilePickerActivity extends AppCompatActivity
 	private Button						mInstallFilesButton				= null;
 	private boolean						mMultiSelect					= false;
 
-	private static final int PERMISSION_REQUEST_CODE = 1;
+	private static final int PERMISSION_RD_REQUEST_CODE = 1;
 
 	private boolean checkPermission() {
 		int result = ContextCompat.checkSelfPermission(FilePickerActivity.this,
 				android.Manifest.permission.READ_EXTERNAL_STORAGE);
-		if (result == PackageManager.PERMISSION_GRANTED) {
-			return true;
-		} else {
+		if (result != PackageManager.PERMISSION_GRANTED)
 			return false;
-		}
+		return true;
 	}
 
 	private void requestPermission() {
 		if (ActivityCompat.shouldShowRequestPermissionRationale(FilePickerActivity.this,
 				android.Manifest.permission.READ_EXTERNAL_STORAGE)) {
-			Toast.makeText(FilePickerActivity.this, "Read External Storage permission allows us to do store images. Please allow this permission in App Settings.", Toast.LENGTH_LONG).show();
+			Toast.makeText(FilePickerActivity.this,
+					"Read External Storage permission allows us to do store images."
+							+" Please allow this permission in App Settings.", Toast.LENGTH_LONG).show();
 		} else {
 			ActivityCompat.requestPermissions(FilePickerActivity.this,
 					new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},
-					PERMISSION_REQUEST_CODE);
+					PERMISSION_RD_REQUEST_CODE);
 		}
 	}
 
@@ -97,12 +97,12 @@ public class FilePickerActivity extends AppCompatActivity
 	public void onRequestPermissionsResult(int requestCode, String permissions[],
 										   int[] grantResults) {
 		switch (requestCode) {
-			case PERMISSION_REQUEST_CODE:
+			case PERMISSION_RD_REQUEST_CODE:
 				if (grantResults.length > 0 && grantResults[0] ==
 						PackageManager.PERMISSION_GRANTED) {
-					Log.e("value", "Permission Granted, Now you can use local drive .");
+					Log.e("value", "Permission Granted, Now you can read local drive .");
 				} else {
-					Log.e("value", "Permission Denied, You cannot use local drive .");
+					Log.e("value", "Permission Denied, You cannot read local drive .");
 				}
 				break;
 		}
@@ -126,20 +126,9 @@ public class FilePickerActivity extends AppCompatActivity
 		((ViewGroup) mListView.getParent()).addView(emptyView);
 		mListView.setEmptyView(emptyView);
 
-		if (Build.VERSION.SDK_INT >= 23)
-		{
-			if (checkPermission())
-			{
-				// Code for above or equal 23 API Oriented Device
-				// Your Permission granted already .Do next code
-			} else {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+			if (!checkPermission())
 				requestPermission(); // Code for permission
-			}
-		}
-		else
-		{
-			// Code for Below 23 API Oriented Device
-			// Do next code
 		}
 
 		mFileType = null;

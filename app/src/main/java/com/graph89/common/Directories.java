@@ -20,10 +20,10 @@
 
 package com.graph89.common;
 
+import android.content.Context;
 import android.os.Build;
 import android.os.Environment;
 
-import com.graph89.emulationcore.EmulatorActivity;
 import com.graph89.emulationcore.Graph89ActivityBase;
 
 public class Directories
@@ -49,10 +49,18 @@ public class Directories
 
 	public static String getScreenShotDirectory(Graph89ActivityBase activity)
 	{
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
-            return Util.GetMediaRootFolder(activity) + "graph89/screenshots/";
-        }
-        return Environment.DIRECTORY_PICTURES;
+		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+			return Util.GetMediaRootFolder(activity) + "graph89/screenshots/";
+		}
+		else if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
+			/*
+			return ((Context)activity).getExternalFilesDir(
+					Environment.DIRECTORY_PICTURES).getAbsolutePath();
+			 */
+			return Environment
+					.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString();
+		}
+		return Environment.DIRECTORY_PICTURES;
 	}
 
 	public static String getReceivedDirectory(Graph89ActivityBase activity)

@@ -1,5 +1,4 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.Bisha.TI89Emu"
     android:installLocation="auto"
     android:versionCode="1134"
@@ -43,6 +42,17 @@
             android:name="com.graph89.emulationcore.ConfigurationPage"
             android:theme="@style/Theme.AppCompat"
             android:label="Settings" />
-    </application>
 
+        <!-- if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) { -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+        <!-- }if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) { -->
+    </application>
 </manifest>

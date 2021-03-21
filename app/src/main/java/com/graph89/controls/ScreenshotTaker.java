@@ -19,24 +19,31 @@
 
 package com.graph89.controls;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.Bisha.TI89Emu.R;
 import com.graph89.common.Util;
@@ -60,6 +67,19 @@ public class ScreenshotTaker
 	{
 		mContext = context;
 		mScreenshotFolder = screenshotFolder;
+
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+		{
+			String TAG = "Storage Permission";
+			if (context.checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+					== PackageManager.PERMISSION_GRANTED) {
+				Log.v(TAG, "Permission is granted");
+			} else {
+				Log.v(TAG, "Permission is revoked");
+				ActivityCompat.requestPermissions((EmulatorActivity) context,
+						new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+			}
+		}
 	}
 
 	@SuppressLint("SetTextI18n")
@@ -136,20 +156,27 @@ public class ScreenshotTaker
 										LastFile = imageUri;
 									} else {
 										final File f = new File(mScreenshotFolder, filename);
-										f.getParentFile().mkdirs();
+										if (!f.getParentFile().exists())
+											f.getParentFile().mkdirs();
 										fos = new FileOutputStream(f);
-										LastFile = Uri.fromFile(f);
+										if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+											LastFile = Uri.fromFile(f);
+										} else {
+											LastFile = FileProvider.getUriForFile(mContext, mContext.getApplicationContext().getPackageName() + ".provider", f);
+										}
 									}
 									image.compress(Bitmap.CompressFormat.PNG, 90, fos);
 									Objects.requireNonNull(fos).close();
 
 									MediaScannerConnection.scanFile(mContext,
-											new String[] { LastFile.getPath() },
-											new String[] { "image/png" },
-											new MediaScannerConnection.OnScanCompletedListener()
-											{
-												public void onScanCompleted(String path, Uri uri) { }
-											});
+											new String[]{LastFile.getPath()},
+											new String[]{"image/png"},
+											new MediaScannerConnection.OnScanCompletedListener() {
+										public void onScanCompleted(String path, Uri uri) {
+											Log.i("ExternalStorage", "Scanned " + path + ":");
+											Log.i("ExternalStorage", "-> uri=" + uri);
+										}
+									});
 									activity.HideKeyboard();
 
 									// keyboard doesn't hide. Delay the new
@@ -169,6 +196,7 @@ public class ScreenshotTaker
 								{
 									LastFile = Uri.EMPTY;
 									Util.ShowAlert((EmulatorActivity) mContext, "ScreenshotTaker ShowDialog", e);
+									e.printStackTrace();
 								}
 							}
 

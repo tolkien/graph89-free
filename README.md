@@ -41,10 +41,11 @@ Mar 14, 2021
       https://stackoverflow.com/questions/56904485/how-to-save-an-image-in-android-q-using-mediastore
  2. change minSdkVersion from 17 to 19, compileSdkVersion from 26 to 29
 
-Mar 17, 2021
- 1. fix somewaht takescreenshot feature on android 11.
-  but, the path displayed in screen is wrong.
-  
 Mar 20, 2021
- 1. the path of screenshot directory on android 11 is fixed.
-  that is not full path.
+ 1. fix takescreenshot feature on android 11.
+
+Mar 21, 2021
+ 1. fix takescreenshot feature on android 8.
+  see https://boilerplate.tistory.com/43
+     https://stackoverflow.com/questions/7887078/android-saving-file-to-external-storage
+     https://www.simplifiedcoding.net/android-save-bitmap-to-gallery/

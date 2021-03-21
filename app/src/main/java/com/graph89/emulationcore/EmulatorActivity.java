@@ -604,6 +604,9 @@ public class EmulatorActivity extends Graph89ActivityBase
 		Intent intent = new Intent();
 		intent.setAction(android.content.Intent.ACTION_VIEW);
 		intent.setDataAndType(ScreenshotTaker.LastFile, "image/png");
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+			intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+		}
 		startActivity(intent);
 	}
 
