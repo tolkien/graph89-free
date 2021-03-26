@@ -23,7 +23,7 @@
                 android:id="@+id/rom_manager_add_rom_deleterom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:layout_margin="5dp"
                 app:srcCompat="@android:drawable/ic_menu_delete" />
         </RelativeLayout>
@@ -38,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="ROM File:" />
+            android:text="@string/rom_file" />
 
         <Button
             android:id="@+id/rom_manager_add_rom_browse_button"
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:minEms="7"
-            android:text="Browse" />
+            android:text="@string/browse" />
 
         <TextView
             android:id="@+id/rom_manager_add_rom_browse_text"
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:text="Location"
+            android:text="@string/location"
             android:visibility="gone" />
     </TableRow>
 
@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="Calculator Type:" />
+            android:text="@string/calculator_type" />
 
         <Spinner
             android:id="@+id/add_rom_calctype_spinner"
@@ -85,7 +85,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="ROM Title:" />
+            android:text="@string/rom_title" />
 
         <EditText
             android:id="@+id/rom_manager_add_rom_title"

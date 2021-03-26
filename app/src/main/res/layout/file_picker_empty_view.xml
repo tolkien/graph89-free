@@ -19,5 +19,5 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center_vertical|center_horizontal"
-    android:text="No compatible files found in this directory"
+    android:text="@string/no_compatible_files_found"
     android:textSize="24sp" />

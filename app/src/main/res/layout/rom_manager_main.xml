@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="Autostart Options"
+            android:text="@string/auto_start_options"
             android:textAppearance="?android:attr/textAppearanceMedium" />
         
        <LinearLayout
@@ -33,7 +33,7 @@
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="If Graph89 is started while the phone is being held in:" 
+                android:text="@string/if_graph89_is_started_while_the_phone_is_being_held_in"
                 android:layout_weight = "1"/>
         </LinearLayout>
        
@@ -46,7 +46,7 @@
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="Portrait Mode, Start: " 
+                android:text="@string/portrait_mode_start"
                 android:layout_weight = "1"/>
 
             <Spinner
@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight = "1"
-                android:text="Landscape Mode, Start: " />
+                android:text="@string/landscape_mode_start" />
 
             <Spinner
                 android:layout_width="0px"
@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="Add ROM" />
+        android:text="@string/add_rom" />
 
     <ImageView
         android:layout_width="fill_parent"
@@ -109,7 +109,7 @@
         android:layout_height="fill_parent"
         android:layout_gravity="center"
         android:layout_marginTop="50dip"
-        android:text="No ROMs are installed\n\nClick &apos;Add ROM&apos; to install at least one\n\nAccepted File Formats:\n  *.rom, *.89u, *.tib"
+        android:text="@string/no_roms_are_installed_click_add_rom_to_install_at_least_one"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textStyle="italic"
         android:visibility="gone" />

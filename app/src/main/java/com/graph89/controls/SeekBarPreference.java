@@ -26,9 +26,12 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.preference.DialogPreference;
+import android.view.ViewGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.SeekBar.OnSeekBarChangeListener;
+
+import java.text.MessageFormat;
 
 public final class SeekBarPreference extends DialogPreference implements OnSeekBarChangeListener
 {
@@ -80,7 +83,7 @@ public final class SeekBarPreference extends DialogPreference implements OnSeekB
 
 		// Inflate layout
 		LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View view = inflater.inflate(R.layout.dialog_slider, null);
+		View view = inflater.inflate(R.layout.dialog_slider, (ViewGroup) null);
 
 		// Setup minimum and maximum text labels
 
@@ -90,7 +93,8 @@ public final class SeekBarPreference extends DialogPreference implements OnSeekB
 		}
 		else
 		{
-			((TextView) view.findViewById(R.id.dialog_slider_min_value)).setText(mMinValue + ValuePost);
+			((TextView) view.findViewById(R.id.dialog_slider_min_value))
+					.setText(MessageFormat.format("{0}{1}", mMinValue, ValuePost));
 		}
 
 		if (ValueMAX.length() > 0)
@@ -99,7 +103,8 @@ public final class SeekBarPreference extends DialogPreference implements OnSeekB
 		}
 		else
 		{
-			((TextView) view.findViewById(R.id.dialog_slider_max_value)).setText(mMaxValue + ValuePost);
+			((TextView) view.findViewById(R.id.dialog_slider_max_value))
+					.setText(MessageFormat.format("{0}{1}", mMaxValue, ValuePost));
 		}
 
 		// Setup SeekBar
@@ -166,7 +171,8 @@ public final class SeekBarPreference extends DialogPreference implements OnSeekB
 		}
 		else
 		{
-			mValueText.setText(mCurrentValue + ValuePost);
+			mValueText.setText(
+					MessageFormat.format("{0}{1}", mCurrentValue, ValuePost));
 		}
 	}
 

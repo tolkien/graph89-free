@@ -8,9 +8,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/padding_medium"
-            android:layout_marginRight="@dimen/padding_large"
-            android:text="Location: " />
+            android:layout_marginStart="@dimen/padding_medium"
+            android:layout_marginEnd="@dimen/padding_large"
+            android:text="@string/location_at" />
 
         <TextView
             android:id="@+id/save_received_file_readonly_path"
@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/padding_large"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:text="@string/text_view" />
 
     </TableRow>
 
@@ -27,9 +27,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/padding_medium"
-            android:layout_marginRight="@dimen/padding_large"
-            android:text="File: " />
+            android:layout_marginStart="@dimen/padding_medium"
+            android:layout_marginEnd="@dimen/padding_large"
+            android:text="@string/file_at" />
 
         <EditText
             android:id="@+id/save_received_file_path"

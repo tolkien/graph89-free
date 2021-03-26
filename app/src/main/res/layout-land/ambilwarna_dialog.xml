@@ -18,7 +18,8 @@
 		android:layout_height="wrap_content"
 		android:id="@+id/ambilwarna_state"
 		android:orientation="vertical"
-		android:paddingRight="@dimen/ambilwarna_spacer"
+		android:paddingStart="0dp"
+		android:paddingEnd="@dimen/ambilwarna_spacer"
 		android:gravity="center"
 		android:layout_centerVertical="true"
 	>
@@ -46,7 +47,7 @@
 		android:id="@+id/ambilwarna_viewSatBri"
 		android:layout_width="@dimen/ambilwarna_hsvWidth"
 		android:layout_height="@dimen/ambilwarna_hsvHeight"
-		android:layout_toRightOf="@id/ambilwarna_state"
+		android:layout_toEndOf="@id/ambilwarna_state"
 		android:layerType="software"
 	/>
 	<!-- needed because i can't get parent keeping its bottom layout
@@ -60,8 +61,8 @@
 		android:id="@+id/ambilwarna_viewHue"
 		android:layout_width="@dimen/ambilwarna_hueWidth"
 		android:layout_height="@dimen/ambilwarna_hsvHeight"
-		android:layout_toRightOf="@id/ambilwarna_viewSatBri"
-		android:layout_marginLeft="@dimen/ambilwarna_spacer"
+		android:layout_toEndOf="@id/ambilwarna_viewSatBri"
+		android:layout_marginStart="@dimen/ambilwarna_spacer"
 		app:srcCompat="@drawable/ambilwarna_hue"
 		android:scaleType="fitXY"
 	/>

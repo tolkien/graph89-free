@@ -49,3 +49,11 @@ Mar 21, 2021
   see https://boilerplate.tistory.com/43
      https://stackoverflow.com/questions/7887078/android-saving-file-to-external-storage
      https://www.simplifiedcoding.net/android-save-bitmap-to-gallery/
+
+Mar 26, 2021
+ 1. do "Refactor -> Migrate to AndroidX..."
+ 2. suppress warning about com.graph89.controls.SeekBarPreference,
+        com.graph89.controls.AmbilWarnaPreference
+        using tools:ignore="ResAuto,Instantiatable" in settings.xml
+ 3. fix many lint warnings
+ 

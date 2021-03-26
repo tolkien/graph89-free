@@ -465,6 +465,7 @@ public class RomManagerActivity extends Graph89ActivityBase
 					break;
 			}
 		}
+		super.onActivityResult(requestCode, resultCode, data);
 	}
 
 	private void HandlerRefreshUI()

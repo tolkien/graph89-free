@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:text="Install Selected Items"
+        android:text="@string/install_selected_items"
         android:visibility="gone" />
 
 </LinearLayout>

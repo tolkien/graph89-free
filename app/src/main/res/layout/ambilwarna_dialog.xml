@@ -25,8 +25,8 @@
             android:id="@+id/ambilwarna_viewHue"
             android:layout_width="@dimen/ambilwarna_hueWidth"
             android:layout_height="@dimen/ambilwarna_hsvHeight"
-            android:layout_marginLeft="@dimen/ambilwarna_spacer"
-            android:layout_toRightOf="@id/ambilwarna_viewSatBri"
+            android:layout_marginStart="@dimen/ambilwarna_spacer"
+            android:layout_toEndOf="@id/ambilwarna_viewSatBri"
             android:scaleType="fitXY"
             app:srcCompat="@drawable/ambilwarna_hue" />
 

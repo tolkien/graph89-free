@@ -34,20 +34,20 @@
         android:layout_width="40dip"
         android:layout_height="40dip"
         android:layout_marginBottom="5dip"
-        android:layout_marginLeft="5dip"
+        android:layout_marginStart="5dip"
         android:layout_marginTop="5dip"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/romfile" />
 
     <TextView
         android:id="@+id/file_picker_text"
-        android:layout_width="fill_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginLeft="10dip"
+        android:layout_gravity="start|center_vertical"
+        android:layout_marginStart="10dip"
         android:layout_weight="1"
         android:singleLine="true"
-        android:text="filename"
+        android:text="@string/filename"
         android:textSize="28sp" />
 
 </LinearLayout>

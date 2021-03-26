@@ -769,6 +769,7 @@ public class EmulatorActivity extends Graph89ActivityBase
 					break;
 			}
 		}
+		super.onActivityResult(requestCode, resultCode, data);
 	}
 
 	public static void TiEmuSetScreenParams(EmulatorScreen screen)

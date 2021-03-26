@@ -121,7 +121,7 @@ public class FilePickerActivity extends AppCompatActivity
 		mInstallFilesButton.setVisibility(View.GONE);
 
 		LayoutInflater inflator = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View emptyView = inflator.inflate(R.layout.file_picker_empty_view, null);
+		View emptyView = inflator.inflate(R.layout.file_picker_empty_view, (ViewGroup) null);
 		((ViewGroup) mListView.getParent()).addView(emptyView);
 		mListView.setEmptyView(emptyView);
 
