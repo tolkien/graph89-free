@@ -19,7 +19,7 @@
 
 package com.graph89.common;
 
-import android.support.v7.app.AlertDialog;
+import androidx.appcompat.app.AlertDialog;
 
 public class AlertControl
 {

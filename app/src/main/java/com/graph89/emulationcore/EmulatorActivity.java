@@ -34,7 +34,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
 import android.os.Vibrator;
-import android.support.v7.app.AlertDialog;
+import androidx.appcompat.app.AlertDialog;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ImageSpan;

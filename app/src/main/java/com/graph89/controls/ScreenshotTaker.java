@@ -32,10 +32,10 @@ import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.FileProvider;
-import android.support.v7.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
+import androidx.appcompat.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,7 +43,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.Bisha.TI89Emu.R;
 import com.graph89.common.Util;
@@ -102,7 +101,7 @@ public class ScreenshotTaker
 		filenameEdit.setText(dateNow + ".png");
 		filenameEdit.setSelection(dateNow.length());
 
-		final android.support.v7.app.AlertDialog d = new AlertDialog.Builder(mContext)
+		final androidx.appcompat.app.AlertDialog d = new AlertDialog.Builder(mContext)
 				.setView(view).setTitle("Take Screenshot")
 				.setPositiveButton(android.R.string.ok, new Dialog.OnClickListener()
 				{

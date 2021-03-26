@@ -22,7 +22,6 @@ package com.graph89.common;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -31,7 +30,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Environment;
-import android.support.v7.app.AlertDialog;
+import androidx.appcompat.app.AlertDialog;
 
 import com.graph89.emulationcore.EmulatorActivity;
 import com.graph89.emulationcore.Graph89ActivityBase;
@@ -89,14 +88,14 @@ public class Util
 	{
 		if (title == null && text == null) return null;
 		
-		android.support.v7.app.AlertDialog alert = new android.support.v7.app.AlertDialog.Builder(context).setTitle(title).setMessage(text).setPositiveButton(android.R.string.ok, null).create();
+		androidx.appcompat.app.AlertDialog alert = new androidx.appcompat.app.AlertDialog.Builder(context).setTitle(title).setMessage(text).setPositiveButton(android.R.string.ok, null).create();
 		alert.show();
 		return alert;
 	}
 
 	public static void ShowAlert(final EmulatorActivity context, String location, Exception e)
 	{
-		final android.support.v7.app.AlertDialog alert = new AlertDialog.Builder(context).setTitle("Error").setMessage("Location: " + location + "\n" + e.getMessage() + "\n" + e.getStackTrace()).setPositiveButton(android.R.string.ok, new Dialog.OnClickListener() {
+		final androidx.appcompat.app.AlertDialog alert = new AlertDialog.Builder(context).setTitle("Error").setMessage("Location: " + location + "\n" + e.getMessage() + "\n" + e.getStackTrace()).setPositiveButton(android.R.string.ok, new Dialog.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface d, int which)
 			{

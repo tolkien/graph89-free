@@ -24,7 +24,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
-import android.support.v7.app.AlertDialog;
+import androidx.appcompat.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,7 +74,7 @@ public class ReceivedFileSaver
 		filenameEdit.setText(TIEmuThread.ReceivedFileName);
 		filenameEdit.setSelection(TIEmuThread.ReceivedFileName.length());
 
-		final android.support.v7.app.AlertDialog d = new android.support.v7.app.AlertDialog.Builder(mContext).setView(view).setTitle("Save Received File").setPositiveButton(android.R.string.ok, new Dialog.OnClickListener()
+		final androidx.appcompat.app.AlertDialog d = new androidx.appcompat.app.AlertDialog.Builder(mContext).setView(view).setTitle("Save Received File").setPositiveButton(android.R.string.ok, new Dialog.OnClickListener()
 		{
 			@Override
 			public void onClick(DialogInterface d, int which)

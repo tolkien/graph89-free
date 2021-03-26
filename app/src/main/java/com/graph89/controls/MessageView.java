@@ -20,7 +20,7 @@
 package com.graph89.controls;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatTextView;
+import androidx.appcompat.widget.AppCompatTextView;
 import android.text.Spannable;
 import android.text.util.Linkify;
 import android.util.AttributeSet;

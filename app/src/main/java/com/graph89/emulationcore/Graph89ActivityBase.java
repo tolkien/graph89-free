@@ -21,7 +21,7 @@ package com.graph89.emulationcore;
 
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.graph89.common.AlertControl;
 import com.graph89.common.Util;

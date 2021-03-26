@@ -20,7 +20,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.graphics.Color;
-import android.support.v7.app.AlertDialog;
+import androidx.appcompat.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -140,7 +140,7 @@ public class AmbilWarnaDialog
 			}
 		});
 
-		dialog = new android.support.v7.app.AlertDialog.Builder(context).setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener()
+		dialog = new androidx.appcompat.app.AlertDialog.Builder(context).setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener()
 		{
 			@Override
 			public void onClick(DialogInterface dialog, int which)
@@ -261,7 +261,7 @@ public class AmbilWarnaDialog
 		dialog.show();
 	}
 
-	public android.support.v7.app.AlertDialog getDialog()
+	public androidx.appcompat.app.AlertDialog getDialog()
 	{
 		return dialog;
 	}
