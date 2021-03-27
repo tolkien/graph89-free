@@ -57,3 +57,5 @@ Mar 26, 2021
         using tools:ignore="ResAuto,Instantiatable" in settings.xml
  3. fix many lint warnings
  
+Mar 27, 2021
+ 1. remove com.graph89.controls.AmbilWarnaPreference

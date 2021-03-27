@@ -34,10 +34,6 @@ public class CalculatorConfiguration
 	public static final String	OverclockWhenBusyKey	= "CONF_OVERCLOCK";
 	public static final String	SaveStateOnExitKey		= "CONF_SAVE_STATE";
 	public static final String	EnableGrayScaleKey		= "CONF_ENABLE_GRAYSCALE";
-	public static final String	PixelOffKey				= "CONF_PIXEL_OFF";
-	public static final String	PixelOnKey				= "CONF_PIXEL_ON";
-	public static final String	LCDColorKey				= "CONF_LCD_COLOR";
-	public static final String	GridColorKey			= "CONF_GRID_COLOR";
 	public static final String	TurnOffOnScreenOffKey	= "CONF_OFF_ON_SCREENOFF";
 	public static final String	OrientationKey			= "CONF_ORIENTATION";
 	public static final String	LCDTypeKey				= "CONF_LCD_TYPE";

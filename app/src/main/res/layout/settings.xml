@@ -91,30 +91,6 @@
             android:key="CONF_ORIENTATION"
             android:title="@string/orientation" />
 
-        <com.graph89.controls.AmbilWarnaPreference
-            android:defaultValue="0xFFB6C5B7"
-            android:key="CONF_PIXEL_OFF"
-            android:summary="Set the color for a LCD Off Pixel"
-            android:title="@string/off_pixel_color" />
-
-        <com.graph89.controls.AmbilWarnaPreference
-            android:defaultValue="0xFF000000"
-            android:key="CONF_PIXEL_ON"
-            android:summary="Set the color for a LCD On Pixel"
-            android:title="@string/on_pixel_color" />
-
-        <com.graph89.controls.AmbilWarnaPreference
-            android:defaultValue="0xFFA5BAA0"
-            android:key="CONF_GRID_COLOR"
-            android:summary="Set the grid color for Dot Matrix LCD type"
-            android:title="@string/lcd_grid_color" />
-
-        <com.graph89.controls.AmbilWarnaPreference
-            android:defaultValue="0xFFA5BAA0"
-            android:key="CONF_LCD_COLOR"
-            android:summary="Set the background color of the LCD. Not always visible!"
-            android:title="@string/lcd_background_color" />
-
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/emulation_settings" >

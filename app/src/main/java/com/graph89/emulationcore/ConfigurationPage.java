@@ -34,7 +34,6 @@ import com.graph89.common.CalculatorInstance;
 import com.graph89.common.CalculatorInstanceHelper;
 import com.graph89.common.CalculatorTypes;
 import com.graph89.common.SkinDefinition;
-import com.graph89.controls.AmbilWarnaPreference;
 import com.graph89.controls.SeekBarPreference;
 
 @SuppressWarnings("deprecation")
@@ -49,7 +48,6 @@ public class ConfigurationPage extends PreferenceActivity implements OnSharedPre
 	private CalculatorInstanceHelper	mCalculatorInstances	= null;
 
 	private SeekBarPreference			mHapticFeedback			= null;
-	private SeekBarPreference			mCPUSpeed				= null;
 	private SeekBarPreference			mTimeout				= null;
 	private SeekBarPreference			mScreenScale			= null;
 
@@ -57,8 +55,6 @@ public class ConfigurationPage extends PreferenceActivity implements OnSharedPre
 	private ListPreference				mSkinListV200			= null;
 	private ListPreference				mSkinListTI84			= null;
 	private ListPreference				mOrientationList		= null;
-	private AmbilWarnaPreference		mLcdColor				= null;
-	private AmbilWarnaPreference		mGridColor				= null;
 	private ListPreference				mLcdType				= null;
 
 	@Override
@@ -150,22 +146,6 @@ public class ConfigurationPage extends PreferenceActivity implements OnSharedPre
 		{
 			mActiveInstance.Configuration.EnergySave = sharedPreferences.getBoolean(CalculatorConfiguration.EnergySaveKey, true);
 		}
-		else if (key.equals(CalculatorConfiguration.LCDColorKey))
-		{
-			mActiveInstance.Configuration.LCDColor = sharedPreferences.getInt(CalculatorConfiguration.LCDColorKey, 0xFFA5BAA0);
-		}
-		else if (key.equals(CalculatorConfiguration.PixelOffKey))
-		{
-			mActiveInstance.Configuration.PixelOff = sharedPreferences.getInt(CalculatorConfiguration.PixelOffKey, 0xFFB6C5B7);
-		}
-		else if (key.equals(CalculatorConfiguration.PixelOnKey))
-		{
-			mActiveInstance.Configuration.PixelOn = sharedPreferences.getInt(CalculatorConfiguration.PixelOnKey, 0xFF000000);
-		}
-		else if (key.equals(CalculatorConfiguration.GridColorKey))
-		{
-			mActiveInstance.Configuration.GridColor = sharedPreferences.getInt(CalculatorConfiguration.GridColorKey, 0xFFA5BAA0);
-		}
 		else if (key.equals(CalculatorConfiguration.TurnOffOnScreenOffKey))
 		{
 			mActiveInstance.Configuration.TurnOffOnScreenOff = sharedPreferences.getBoolean(CalculatorConfiguration.TurnOffOnScreenOffKey, true);
@@ -181,15 +161,6 @@ public class ConfigurationPage extends PreferenceActivity implements OnSharedPre
 			mLcdType.setSummary(sharedPreferences.getString(CalculatorConfiguration.LCDTypeKey, "Solid"));
 
 			PreferenceCategory d = (PreferenceCategory) findPreference("CONFIG_CAT_DISPLAY_SETTINGS");
-
-			if (mActiveInstance.Configuration.UseLCDGrid)
-			{
-				d.addPreference(mGridColor);
-			}
-			else
-			{
-				d.removePreference(mGridColor);
-			}
 		}
 
 		mCalculatorInstances.Save();
@@ -254,11 +225,6 @@ public class ConfigurationPage extends PreferenceActivity implements OnSharedPre
 		editor.putBoolean(CalculatorConfiguration.EnableGrayScaleKey, mActiveInstance.Configuration.EnableGrayScale);
 		editor.putBoolean(CalculatorConfiguration.TurnOffOnScreenOffKey, mActiveInstance.Configuration.TurnOffOnScreenOff);
 
-		editor.putInt(CalculatorConfiguration.LCDColorKey, mActiveInstance.Configuration.LCDColor);
-		editor.putInt(CalculatorConfiguration.PixelOffKey, mActiveInstance.Configuration.PixelOff);
-		editor.putInt(CalculatorConfiguration.PixelOnKey, mActiveInstance.Configuration.PixelOn);
-		editor.putInt(CalculatorConfiguration.GridColorKey, mActiveInstance.Configuration.GridColor);
-
 		editor.putString(CalculatorConfiguration.LCDTypeKey, mActiveInstance.Configuration.UseLCDGrid ? "Dot Matrix" : "Solid");
 
 		editor.apply();
@@ -273,10 +239,7 @@ public class ConfigurationPage extends PreferenceActivity implements OnSharedPre
 
 		mHapticFeedback = (SeekBarPreference) findPreference(CalculatorConfiguration.HapticFeedbackKey);
 		mScreenScale = (SeekBarPreference) findPreference(CalculatorConfiguration.ScreenScaleKey);
-		mCPUSpeed = (SeekBarPreference) getPreferenceScreen().findPreference(CalculatorConfiguration.CPUSpeedKey);
 		mTimeout = (SeekBarPreference) getPreferenceScreen().findPreference(CalculatorConfiguration.AutoOFFKey);
-		mLcdColor = (AmbilWarnaPreference) getPreferenceScreen().findPreference(CalculatorConfiguration.LCDColorKey);
-		mGridColor = (AmbilWarnaPreference) getPreferenceScreen().findPreference(CalculatorConfiguration.GridColorKey);
 		mLcdType = (ListPreference) findPreference(CalculatorConfiguration.LCDTypeKey);
 
 		mHapticFeedback.ValuePost = " ms";
@@ -285,8 +248,6 @@ public class ConfigurationPage extends PreferenceActivity implements OnSharedPre
 		mScreenScale.ValuePost = "x";
 		mScreenScale.mMaxValue = MaxScreenZoom;
 		mScreenScale.mDefaultValue = DefaultScreenZoom;
-
-		mCPUSpeed.ValuePost = "%";
 
 		mTimeout.ValuePost = " min";
 		mTimeout.ValueMAX = "Never";
@@ -314,17 +275,7 @@ public class ConfigurationPage extends PreferenceActivity implements OnSharedPre
 			d.removePreference(mSkinList);
 			d.removePreference(mSkinListTI84);
 			d.removePreference(mScreenScale);
-			d.removePreference(mLcdColor);
 			d.removePreference(mOrientationList);
-		}
-
-		if (mActiveInstance.Configuration.UseLCDGrid)
-		{
-			d.addPreference(mGridColor);
-		}
-		else
-		{
-			d.removePreference(mGridColor);
 		}
 	}
 

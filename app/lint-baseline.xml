@@ -13,28 +13,6 @@
     </issue>
 
     <issue
-        id="DrawAllocation"
-        message="Avoid object allocations during draw/layout operations (preallocate and reuse instead)"
-        errorLine1="  Shader dalam = new LinearGradient(0.f, 0.f, this.getMeasuredWidth(), 0.f,"
-        errorLine2="                 ^">
-        <location
-            file="src\main\java\com\graph89\controls\AmbilWarnaKotak.java"
-            line="56"
-            column="18"/>
-    </issue>
-
-    <issue
-        id="DrawAllocation"
-        message="Avoid object allocations during draw/layout operations (preallocate and reuse instead)"
-        errorLine1="  ComposeShader shader = new ComposeShader(luar, dalam, PorterDuff.Mode.MULTIPLY);"
-        errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src\main\java\com\graph89\controls\AmbilWarnaKotak.java"
-            line="58"
-            column="26"/>
-    </issue>
-
-    <issue
         id="StaticFieldLeak"
         message="Do not place Android context classes in static fields (static reference to `CalculatorInstanceHelper` which has field `mContext` pointing to `Context`); this is a memory leak"
         errorLine1=" public static CalculatorInstanceHelper  CalculatorInstances    = null;"
@@ -54,28 +32,6 @@
             file="src\main\res\layout\controlbar.xml"
             line="6"
             column="5"/>
-    </issue>
-
-    <issue
-        id="IconDipSize"
-        message="The image `ambilwarna_cursor.png` varies significantly in its density-independent (dip) size across the various density versions: drawable-hdpi\\ambilwarna_cursor.png: 8x8 dp (12x12 px), drawable-ldpi\\ambilwarna_cursor.png: 8x8 dp (6x6 px), drawable-xhdpi\\ambilwarna_cursor.png: 9x9 dp (18x18 px)">
-        <location
-            file="src\main\res\drawable-hdpi\ambilwarna_cursor.png"/>
-        <location
-            file="src\main\res\drawable-ldpi\ambilwarna_cursor.png"/>
-        <location
-            file="src\main\res\drawable-xhdpi\ambilwarna_cursor.png"/>
-    </issue>
-
-    <issue
-        id="IconDipSize"
-        message="The image `ambilwarna_target.png` varies significantly in its density-independent (dip) size across the various density versions: drawable-hdpi\\ambilwarna_target.png: 13x13 dp (20x20 px), drawable-ldpi\\ambilwarna_target.png: 13x13 dp (10x10 px), drawable-xhdpi\\ambilwarna_target.png: 15x15 dp (30x30 px)">
-        <location
-            file="src\main\res\drawable-hdpi\ambilwarna_target.png"/>
-        <location
-            file="src\main\res\drawable-ldpi\ambilwarna_target.png"/>
-        <location
-            file="src\main\res\drawable-xhdpi\ambilwarna_target.png"/>
     </issue>
 
     <issue
@@ -146,51 +102,9 @@
 
     <issue
         id="IconLocation"
-        message="Found bitmap drawable `res/drawable/ambilwarna_arrow_down.png` in densityless folder">
-        <location
-            file="src\main\res\drawable\ambilwarna_arrow_down.png"/>
-    </issue>
-
-    <issue
-        id="IconLocation"
-        message="Found bitmap drawable `res/drawable/ambilwarna_arrow_right.png` in densityless folder">
-        <location
-            file="src\main\res\drawable\ambilwarna_arrow_right.png"/>
-    </issue>
-
-    <issue
-        id="IconLocation"
-        message="Found bitmap drawable `res/drawable/ambilwarna_cursor.png` in densityless folder">
-        <location
-            file="src\main\res\drawable\ambilwarna_cursor.png"/>
-    </issue>
-
-    <issue
-        id="IconLocation"
-        message="Found bitmap drawable `res/drawable/ambilwarna_hue.png` in densityless folder">
-        <location
-            file="src\main\res\drawable\ambilwarna_hue.png"/>
-    </issue>
-
-    <issue
-        id="IconLocation"
-        message="Found bitmap drawable `res/drawable/ambilwarna_target.png` in densityless folder">
-        <location
-            file="src\main\res\drawable\ambilwarna_target.png"/>
-    </issue>
-
-    <issue
-        id="IconLocation"
         message="Found bitmap drawable `res/drawable/backbutton.png` in densityless folder">
         <location
             file="src\main\res\drawable\backbutton.png"/>
-    </issue>
-
-    <issue
-        id="IconDensities"
-        message="Missing the following drawables in `drawable-mdpi`: ambilwarna_arrow_down.png, ambilwarna_arrow_right.png, ambilwarna_cursor.png, ambilwarna_target.png">
-        <location
-            file="src\main\res\drawable-mdpi"/>
     </issue>
 
     <issue

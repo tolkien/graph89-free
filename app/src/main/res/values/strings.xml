@@ -27,10 +27,6 @@
     <string name="enable_grayscale">Enable Grayscale</string>
     <string name="skin">Skin</string>
     <string name="orientation">Orientation</string>
-    <string name="off_pixel_color">OFF Pixel Color</string>
-    <string name="on_pixel_color">ON Pixel Color</string>
-    <string name="lcd_grid_color">LCD Grid Color</string>
-    <string name="lcd_background_color">LCD Background Color</string>
     <string name="emulation_settings">Emulation Settings</string>
     <string name="auto_off">Auto Off</string>
     <string name="exit_on_screen_off">Exit on Screen Off</string>
