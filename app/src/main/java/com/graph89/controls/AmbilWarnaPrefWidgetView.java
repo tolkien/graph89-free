@@ -46,6 +46,7 @@ public class AmbilWarnaPrefWidgetView extends View {
 	@Override protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
 
-		canvas.drawRect(strokeWidth, strokeWidth, rectSize - strokeWidth, rectSize - strokeWidth, paint);
+		canvas.drawRect(strokeWidth, strokeWidth, rectSize - strokeWidth, rectSize - strokeWidth,
+				paint);
 	}
 }

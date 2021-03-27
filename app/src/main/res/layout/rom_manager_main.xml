@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
@@ -78,7 +79,8 @@
         <ImageView
             android:layout_width="fill_parent"
             android:layout_height="3dp"
-            android:background="#006099" />
+            android:background="#006099"
+            tools:ignore="ContentDescription" />
     </LinearLayout>
 
     <Button
@@ -94,7 +96,8 @@
         android:paddingBottom="2dp"
         android:paddingTop="2dp"
         android:scaleType="fitXY"
-        app:srcCompat="@android:drawable/divider_horizontal_dark" />
+        app:srcCompat="@android:drawable/divider_horizontal_dark"
+        tools:ignore="ContentDescription" />
 
     <ListView
         android:id="@+id/rom_manager_main_rom_list"

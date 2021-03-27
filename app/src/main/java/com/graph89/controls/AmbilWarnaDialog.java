@@ -16,6 +16,7 @@
 
 package com.graph89.controls;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
@@ -62,7 +63,9 @@ public class AmbilWarnaDialog
 	 * @param listener
 	 *            an OnAmbilWarnaListener, allowing you to get back error or
 	 */
-	public AmbilWarnaDialog(final Context context, final int defColor, int color, OnAmbilWarnaListener listener)
+	@SuppressLint("ClickableViewAccessibility")
+	public AmbilWarnaDialog(final Context context, final int defColor, int color,
+							OnAmbilWarnaListener listener)
 	{
 		this.listener = listener;
 		Color.colorToHSV(color, currentColorHsv);
@@ -85,18 +88,16 @@ public class AmbilWarnaDialog
 			@Override
 			public boolean onTouch(View v, MotionEvent event)
 			{
-				if (event.getAction() == MotionEvent.ACTION_MOVE || event.getAction() == MotionEvent.ACTION_DOWN || event.getAction() == MotionEvent.ACTION_UP)
+				if (event.getAction() == MotionEvent.ACTION_MOVE ||
+						event.getAction() == MotionEvent.ACTION_DOWN ||
+						event.getAction() == MotionEvent.ACTION_UP)
 				{
 
 					float y = event.getY();
 					if (y < 0.f) y = 0.f;
-					if (y > viewHue.getMeasuredHeight()) y = viewHue.getMeasuredHeight() - 0.001f; // to
-																									// avoid
-																									// looping
-																									// from
-																									// end
-																									// to
-																									// start.
+					// to avoid looping from end to start.
+					if (y > viewHue.getMeasuredHeight())
+						y = viewHue.getMeasuredHeight() - 0.001f;
 					float hue = 360.f - 360.f / viewHue.getMeasuredHeight() * y;
 					if (hue == 360.f) hue = 0.f;
 					setHue(hue);
@@ -116,7 +117,9 @@ public class AmbilWarnaDialog
 			@Override
 			public boolean onTouch(View v, MotionEvent event)
 			{
-				if (event.getAction() == MotionEvent.ACTION_MOVE || event.getAction() == MotionEvent.ACTION_DOWN || event.getAction() == MotionEvent.ACTION_UP)
+				if (event.getAction() == MotionEvent.ACTION_MOVE ||
+						event.getAction() == MotionEvent.ACTION_DOWN ||
+						event.getAction() == MotionEvent.ACTION_UP)
 				{
 
 					float x = event.getX(); // touch event are in dp units.
@@ -140,7 +143,8 @@ public class AmbilWarnaDialog
 			}
 		});
 
-		dialog = new androidx.appcompat.app.AlertDialog.Builder(context).setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener()
+		dialog = new androidx.appcompat.app.AlertDialog.Builder(context)
+				.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener()
 		{
 			@Override
 			public void onClick(DialogInterface dialog, int which)
@@ -184,7 +188,8 @@ public class AmbilWarnaDialog
 			}
 		}).create();
 		// kill all padding from the dialog window
-		dialog.setView(view, 0, 0, 0, 0);
+		dialog.setView(view, 0, 0,
+				0, 0);
 
 		// move cursor & target on first draw
 		ViewTreeObserver vto = view.getViewTreeObserver();
@@ -206,8 +211,12 @@ public class AmbilWarnaDialog
 		float y = viewHue.getMeasuredHeight() - (getHue() * viewHue.getMeasuredHeight() / 360.f);
 		if (y == viewHue.getMeasuredHeight()) y = 0.f;
 		RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) viewCursor.getLayoutParams();
-		layoutParams.leftMargin = (int) (viewHue.getLeft() - Math.floor(viewCursor.getMeasuredWidth() / 2) - viewContainer.getPaddingLeft());
-        layoutParams.topMargin = (int) (viewHue.getTop() + y - Math.floor(viewCursor.getMeasuredHeight() / 2) - viewContainer.getPaddingTop());
+		layoutParams.leftMargin = (int) (viewHue.getLeft()
+				- Math.floor(viewCursor.getMeasuredWidth() / 2.0f)
+				- viewContainer.getPaddingLeft());
+        layoutParams.topMargin = (int) (viewHue.getTop() + y
+				- Math.floor(viewCursor.getMeasuredHeight() / 2.0f)
+				- viewContainer.getPaddingTop());
         viewCursor.setLayoutParams(layoutParams);
 	}
 
@@ -216,8 +225,12 @@ public class AmbilWarnaDialog
 		float x = getSat() * viewSatVal.getMeasuredWidth();
 		float y = (1.f - getVal()) * viewSatVal.getMeasuredHeight();
 		RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) viewTarget.getLayoutParams();
-		layoutParams.leftMargin = (int) (viewSatVal.getLeft() + x - Math.floor(viewTarget.getMeasuredWidth() / 2) - viewContainer.getPaddingLeft());
-		layoutParams.topMargin = (int) (viewSatVal.getTop() + y - Math.floor(viewTarget.getMeasuredHeight() / 2) - viewContainer.getPaddingTop());
+		layoutParams.leftMargin = (int) (viewSatVal.getLeft() +
+				- Math.floor(viewTarget.getMeasuredWidth() / 2.0f)
+				- viewContainer.getPaddingLeft());
+		layoutParams.topMargin = (int) (viewSatVal.getTop() + y
+				- Math.floor(viewTarget.getMeasuredHeight() / 2.0f)
+				- viewContainer.getPaddingTop());
 		viewTarget.setLayoutParams(layoutParams);
 	}
 

@@ -37,7 +37,8 @@
         android:layout_marginStart="5dip"
         android:layout_marginTop="5dip"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/romfile" />
+        app:srcCompat="@drawable/romfile"
+        android:contentDescription="@string/file_picker" />
 
     <TextView
         android:id="@+id/file_picker_text"

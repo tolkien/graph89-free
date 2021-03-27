@@ -38,4 +38,7 @@
     <string name="cpu_speed">CPU Speed</string>
     <string name="overclock_when_busy">Overclock when Busy</string>
     <string name="energy_save">Energy Save</string>
+    <string name="delete_rom">delete ROM</string>
+    <string name="graph89_icon">graph89 Icon</string>
+    <string name="file_picker">FilePicker</string>
 </resources>

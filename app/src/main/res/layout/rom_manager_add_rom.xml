@@ -1,5 +1,6 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rom_manager_add_rom_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -25,7 +26,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_margin="5dp"
-                app:srcCompat="@android:drawable/ic_menu_delete" />
+                app:srcCompat="@android:drawable/ic_menu_delete"
+                android:contentDescription="@string/delete_rom" />
         </RelativeLayout>
     </TableRow>
 
@@ -92,7 +94,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textNoSuggestions"
-            android:minEms="7" >
+            android:minEms="7"
+            tools:ignore="Autofill,LabelFor">
 
             <requestFocus />
         </EditText>

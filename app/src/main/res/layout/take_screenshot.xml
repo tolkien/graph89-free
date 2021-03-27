@@ -1,4 +1,5 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/take_screenshot_layout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" >
@@ -35,7 +36,8 @@
             android:id="@+id/take_screenshot_path"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textNoSuggestions" >
+            android:inputType="textNoSuggestions"
+            tools:ignore="Autofill,LabelFor">
 
             <requestFocus />
         </EditText>

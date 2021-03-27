@@ -42,12 +42,10 @@ public class UIStateManager
 	public ButtonHighlightView	ButtonHighlightViewInstance	= null;
 
 	private int					mCurrentUIState				= UIStateManager.UI_STATE_UNINITIALIZED;
-	private Context				mContext					= null;
 
 	public UIStateManager(final Context context)
 	{
-		mContext = context;
-		EmulatorActivity activity = (EmulatorActivity) mContext;
+		EmulatorActivity activity = (EmulatorActivity) context;
 
 		ControlBarIntstance = new ControlBar(context);
 
@@ -64,7 +62,7 @@ public class UIStateManager
 					return;
 				EmulatorActivity.ActiveInstanceIndex = position;
 
-				EmulatorActivity emulatorActivity = (EmulatorActivity) mContext;
+				EmulatorActivity emulatorActivity = (EmulatorActivity) context;
 				CalculatorInstanceHelper instances = new CalculatorInstanceHelper(context);
 				instances.SetLastUsed(position);
 				emulatorActivity.HideActions();

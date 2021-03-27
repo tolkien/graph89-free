@@ -34,6 +34,8 @@ import android.view.View;
 public class AmbilWarnaKotak extends View {
 	Paint paint;
 	Shader luar;
+	Shader dalam;
+	ComposeShader shader;
 	final float[] color = { 1.f, 1.f, 1.f };
 
 	public AmbilWarnaKotak(Context context, AttributeSet attrs) {
@@ -44,17 +46,27 @@ public class AmbilWarnaKotak extends View {
 		super(context, attrs, defStyle);
 	}
 
-	@SuppressLint("DrawAllocation") @Override protected void onDraw(Canvas canvas) {
+	@Override
+	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+		super.onSizeChanged(w, h, oldw, oldh);
+
+		luar = new LinearGradient(0.f, 0.f, 0.f, this.getMeasuredHeight(),
+				0xffffffff, 0xff000000, TileMode.CLAMP);
+		dalam = new LinearGradient(0.f, 0.f, this.getMeasuredWidth(), 0.f,
+				0xffffffff, Color.HSVToColor(color), TileMode.CLAMP);
+		shader = new ComposeShader(luar, dalam, PorterDuff.Mode.MULTIPLY);
+	}
+
+	@Override
+	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
+
 		if (paint == null) {
 			paint = new Paint();
-			luar = new LinearGradient(0.f, 0.f, 0.f, this.getMeasuredHeight(), 0xffffffff, 0xff000000, TileMode.CLAMP);
 		}
-		int rgb = Color.HSVToColor(color);
-		Shader dalam = new LinearGradient(0.f, 0.f, this.getMeasuredWidth(), 0.f, 0xffffffff, rgb, TileMode.CLAMP);
-		ComposeShader shader = new ComposeShader(luar, dalam, PorterDuff.Mode.MULTIPLY);
 		paint.setShader(shader);
-		canvas.drawRect(0.f, 0.f, this.getMeasuredWidth(), this.getMeasuredHeight(), paint);
+		canvas.drawRect(0.f, 0.f, this.getMeasuredWidth(), this.getMeasuredHeight(),
+				paint);
 	}
 
 	void setHue(float hue) {

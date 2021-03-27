@@ -2,24 +2,6 @@
 <issues format="5" by="lint 4.1.2" client="gradle" variant="all" version="4.1.2">
 
     <issue
-        id="ObsoleteLintCustomCheck"
-        message="Lint found an issue registry (`androidx.appcompat.AppCompatIssueRegistry`) which is older than the current API level; these checks may not work correctly.&#xA;&#xA;Recompile the checks against the latest version. Custom check API version is 7 (4.0), current lint API level is 8 (4.1+)"
-        includedVariants="debug"
-        excludedVariants="release">
-        <location
-            file="..\..\..\.gradle\caches\transforms-2\files-2.1\44b21666f861b2b454523071d69d07d7\appcompat-1.2.0\jars\lint.jar"/>
-    </issue>
-
-    <issue
-        id="ObsoleteLintCustomCheck"
-        message="Lint found an issue registry (`androidx.fragment.lint.FragmentIssueRegistry`) which is older than the current API level; these checks may not work correctly.&#xA;&#xA;Recompile the checks against the latest version. Custom check API version is 6 (3.6), current lint API level is 8 (4.1+)"
-        includedVariants="debug"
-        excludedVariants="release">
-        <location
-            file="..\..\..\.gradle\caches\transforms-2\files-2.1\351f62b5f38951fe44a0db260f7616e8\fragment-1.2.4\jars\lint.jar"/>
-    </issue>
-
-    <issue
         id="OldTargetApi"
         message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
         errorLine1="        targetSdkVersion 26"
@@ -31,14 +13,25 @@
     </issue>
 
     <issue
-        id="StaticFieldLeak"
-        message="Do not place Android context classes in static fields (static reference to `UIStateManager` which has field `mContext` pointing to `Context`); this is a memory leak"
-        errorLine1=" public static UIStateManager    UIStateManagerObj    = null;"
-        errorLine2="        ~~~~~~">
+        id="DrawAllocation"
+        message="Avoid object allocations during draw/layout operations (preallocate and reuse instead)"
+        errorLine1="  Shader dalam = new LinearGradient(0.f, 0.f, this.getMeasuredWidth(), 0.f,"
+        errorLine2="                 ^">
         <location
-            file="src\main\java\com\graph89\emulationcore\EmulatorActivity.java"
-            line="97"
-            column="9"/>
+            file="src\main\java\com\graph89\controls\AmbilWarnaKotak.java"
+            line="56"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="DrawAllocation"
+        message="Avoid object allocations during draw/layout operations (preallocate and reuse instead)"
+        errorLine1="  ComposeShader shader = new ComposeShader(luar, dalam, PorterDuff.Mode.MULTIPLY);"
+        errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src\main\java\com\graph89\controls\AmbilWarnaKotak.java"
+            line="58"
+            column="26"/>
     </issue>
 
     <issue
@@ -59,19 +52,8 @@
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="src\main\res\layout\controlbar.xml"
-            line="5"
+            line="6"
             column="5"/>
-    </issue>
-
-    <issue
-        id="UselessParent"
-        message="This `RelativeLayout` layout or its `FrameLayout` parent is possibly useless"
-        errorLine1="    &lt;RelativeLayout"
-        errorLine2="     ~~~~~~~~~~~~~~">
-        <location
-            file="src\main\res\layout\ambilwarna_dialog.xml"
-            line="8"
-            column="6"/>
     </issue>
 
     <issue
@@ -216,266 +198,6 @@
         message="Missing density variation folders in `src\\main\\res`: drawable-xxhdpi">
         <location
             file="src\main\res"/>
-    </issue>
-
-    <issue
-        id="Autofill"
-        message="Missing `autofillHints` attribute"
-        errorLine1="        &lt;EditText"
-        errorLine2="         ~~~~~~~~">
-        <location
-            file="src\main\res\layout\rom_manager_add_rom.xml"
-            line="90"
-            column="10"/>
-    </issue>
-
-    <issue
-        id="Autofill"
-        message="Missing `autofillHints` attribute"
-        errorLine1="        &lt;EditText"
-        errorLine2="         ~~~~~~~~">
-        <location
-            file="src\main\res\layout\save_received_file.xml"
-            line="34"
-            column="10"/>
-    </issue>
-
-    <issue
-        id="Autofill"
-        message="Missing `autofillHints` attribute"
-        errorLine1="        &lt;EditText"
-        errorLine2="         ~~~~~~~~">
-        <location
-            file="src\main\res\layout\take_screenshot.xml"
-            line="34"
-            column="10"/>
-    </issue>
-
-    <issue
-        id="ClickableViewAccessibility"
-        message="`onTouch` should call `View#performClick` when a click is detected"
-        errorLine1="   public boolean onTouch(View v, MotionEvent event)"
-        errorLine2="                  ~~~~~~~">
-        <location
-            file="src\main\java\com\graph89\controls\AmbilWarnaDialog.java"
-            line="86"
-            column="19"/>
-    </issue>
-
-    <issue
-        id="ClickableViewAccessibility"
-        message="Custom view ``AmbilWarnaKotak`` has `setOnTouchListener` called on it but does not override `performClick`"
-        errorLine1="  viewSatVal.setOnTouchListener(new View.OnTouchListener()"
-        errorLine2="  ^">
-        <location
-            file="src\main\java\com\graph89\controls\AmbilWarnaDialog.java"
-            line="114"
-            column="3"/>
-    </issue>
-
-    <issue
-        id="ClickableViewAccessibility"
-        message="`onTouch` should call `View#performClick` when a click is detected"
-        errorLine1="   public boolean onTouch(View v, MotionEvent event)"
-        errorLine2="                  ~~~~~~~">
-        <location
-            file="src\main\java\com\graph89\controls\AmbilWarnaDialog.java"
-            line="117"
-            column="19"/>
-    </issue>
-
-    <issue
-        id="ContentDescription"
-        message="Missing `contentDescription` attribute on image"
-        errorLine1="        &lt;ImageView"
-        errorLine2="         ~~~~~~~~~">
-        <location
-            file="src\main\res\layout\ambilwarna_dialog.xml"
-            line="24"
-            column="10"/>
-    </issue>
-
-    <issue
-        id="ContentDescription"
-        message="Missing `contentDescription` attribute on image"
-        errorLine1="  &lt;ImageView"
-        errorLine2="   ~~~~~~~~~">
-        <location
-            file="src\main\res\layout-land\ambilwarna_dialog.xml"
-            line="32"
-            column="4"/>
-    </issue>
-
-    <issue
-        id="ContentDescription"
-        message="Missing `contentDescription` attribute on image"
-        errorLine1="        &lt;ImageView"
-        errorLine2="         ~~~~~~~~~">
-        <location
-            file="src\main\res\layout\ambilwarna_dialog.xml"
-            line="33"
-            column="10"/>
-    </issue>
-
-    <issue
-        id="ContentDescription"
-        message="Missing `contentDescription` attribute on image"
-        errorLine1="        &lt;ImageView"
-        errorLine2="         ~~~~~~~~~">
-        <location
-            file="src\main\res\layout\ambilwarna_dialog.xml"
-            line="40"
-            column="10"/>
-    </issue>
-
-    <issue
-        id="ContentDescription"
-        message="Missing `contentDescription` attribute on image"
-        errorLine1=" &lt;ImageView"
-        errorLine2="  ~~~~~~~~~">
-        <location
-            file="src\main\res\layout-land\ambilwarna_dialog.xml"
-            line="60"
-            column="3"/>
-    </issue>
-
-    <issue
-        id="ContentDescription"
-        message="Missing `contentDescription` attribute on image"
-        errorLine1="            &lt;ImageView"
-        errorLine2="             ~~~~~~~~~">
-        <location
-            file="src\main\res\layout\ambilwarna_dialog.xml"
-            line="63"
-            column="14"/>
-    </issue>
-
-    <issue
-        id="ContentDescription"
-        message="Missing `contentDescription` attribute on image"
-        errorLine1=" &lt;ImageView"
-        errorLine2="  ~~~~~~~~~">
-        <location
-            file="src\main\res\layout-land\ambilwarna_dialog.xml"
-            line="70"
-            column="3"/>
-    </issue>
-
-    <issue
-        id="ContentDescription"
-        message="Missing `contentDescription` attribute on image"
-        errorLine1=" &lt;ImageView"
-        errorLine2="  ~~~~~~~~~">
-        <location
-            file="src\main\res\layout-land\ambilwarna_dialog.xml"
-            line="78"
-            column="3"/>
-    </issue>
-
-    <issue
-        id="ContentDescription"
-        message="Missing `contentDescription` attribute on image"
-        errorLine1="        &lt;ImageView"
-        errorLine2="         ~~~~~~~~~">
-        <location
-            file="src\main\res\layout\controlbar.xml"
-            line="13"
-            column="10"/>
-    </issue>
-
-    <issue
-        id="ContentDescription"
-        message="Missing `contentDescription` attribute on image"
-        errorLine1="    &lt;ImageView"
-        errorLine2="     ~~~~~~~~~">
-        <location
-            file="src\main\res\layout\controlbar.xml"
-            line="42"
-            column="6"/>
-    </issue>
-
-    <issue
-        id="ContentDescription"
-        message="Missing `contentDescription` attribute on image"
-        errorLine1="    &lt;ImageView"
-        errorLine2="     ~~~~~~~~~">
-        <location
-            file="src\main\res\layout\file_picker_list_item.xml"
-            line="32"
-            column="6"/>
-    </issue>
-
-    <issue
-        id="ContentDescription"
-        message="Missing `contentDescription` attribute on image"
-        errorLine1="            &lt;ImageButton"
-        errorLine2="             ~~~~~~~~~~~">
-        <location
-            file="src\main\res\layout\rom_manager_add_rom.xml"
-            line="22"
-            column="14"/>
-    </issue>
-
-    <issue
-        id="ContentDescription"
-        message="Missing `contentDescription` attribute on image"
-        errorLine1="        &lt;ImageView"
-        errorLine2="         ~~~~~~~~~">
-        <location
-            file="src\main\res\layout\rom_manager_main.xml"
-            line="78"
-            column="10"/>
-    </issue>
-
-    <issue
-        id="ContentDescription"
-        message="Missing `contentDescription` attribute on image"
-        errorLine1="    &lt;ImageView"
-        errorLine2="     ~~~~~~~~~">
-        <location
-            file="src\main\res\layout\rom_manager_main.xml"
-            line="91"
-            column="6"/>
-    </issue>
-
-    <issue
-        id="LabelFor"
-        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`"
-        errorLine1="        &lt;EditText"
-        errorLine2="         ~~~~~~~~">
-        <location
-            file="src\main\res\layout\rom_manager_add_rom.xml"
-            line="90"
-            column="10"/>
-    </issue>
-
-    <issue
-        id="LabelFor"
-        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`"
-        errorLine1="        &lt;EditText"
-        errorLine2="         ~~~~~~~~">
-        <location
-            file="src\main\res\layout\save_received_file.xml"
-            line="34"
-            column="10"/>
-    </issue>
-
-    <issue
-        id="LabelFor"
-        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`"
-        errorLine1="        &lt;EditText"
-        errorLine2="         ~~~~~~~~">
-        <location
-            file="src\main\res\layout\take_screenshot.xml"
-            line="34"
-            column="10"/>
-    </issue>
-
-    <issue
-        id="RtlEnabled"
-        message="The project references RTL attributes, but does not explicitly enable or disable RTL support with `android:supportsRtl` in the manifest">
-        <location
-            file="src\main\AndroidManifest.xml"/>
     </issue>
 
 </issues>

@@ -3,6 +3,7 @@
 <RelativeLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
 	android:layout_height="wrap_content"
 	android:id="@+id/ambilwarna_viewContainer"
@@ -35,7 +36,7 @@
 			app:srcCompat="@drawable/ambilwarna_arrow_down"
 			android:paddingTop="@dimen/ambilwarna_spacer"
 			android:paddingBottom="@dimen/ambilwarna_spacer"
-		/>
+			tools:ignore="ContentDescription" />
 		<View
 			android:layout_width="60dp"
 			android:layout_height="30dp"
@@ -65,15 +66,15 @@
 		android:layout_marginStart="@dimen/ambilwarna_spacer"
 		app:srcCompat="@drawable/ambilwarna_hue"
 		android:scaleType="fitXY"
-	/>
+		tools:ignore="ContentDescription" />
 
 	<ImageView
 		android:id="@+id/ambilwarna_cursor"
 		android:layout_width="9dp"
 		android:layout_height="9dp"
 		app:srcCompat="@drawable/ambilwarna_cursor"
-		android:scaleType="matrix" 
-		/>
+		android:scaleType="matrix"
+		tools:ignore="ContentDescription" />
 
 	<ImageView
 		android:id="@+id/ambilwarna_target"
@@ -81,7 +82,7 @@
 		android:layout_height="15dp"
 		app:srcCompat="@drawable/ambilwarna_target"
 		android:scaleType="matrix"
-		 />
+		tools:ignore="ContentDescription" />
 		
 
 </RelativeLayout>

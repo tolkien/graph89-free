@@ -129,16 +129,6 @@ public class EmulatorActivity extends Graph89ActivityBase
 		setContentView(R.layout.emulator_main);
 		BackwardCompatibility.RunPatches(this);
 		InitMembers();
-	/*	
-		try
-		{
-			Thread.sleep(8 * 1000);
-		}
-		catch (InterruptedException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
 	}
 
 	@Override
@@ -528,14 +518,6 @@ public class EmulatorActivity extends Graph89ActivityBase
 
 			nativeSendKeys(keysonoff);
 		}
-	}
-
-	public void SetText(int priority, String text)
-	{
-		if (!InitComplete) return;
-
-		UIStateManagerObj.MessageViewIntstance.SetText(priority, text);
-		UIStateManagerObj.ShowTextViewer();
 	}
 
 	public void SetTextSpannable(int priority, Spannable text)

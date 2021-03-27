@@ -20,7 +20,8 @@
         android:allowBackup="false"
         android:icon="@drawable/ic_launcher"
         android:label="Graph 89 Free"
-        android:theme="@style/Graph89Theme">
+        android:theme="@style/Graph89Theme"
+        android:supportsRtl="false">
         <activity
             android:name="com.graph89.emulationcore.EmulatorActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
