@@ -126,8 +126,6 @@ public class TIEmuThread extends EmulatorThread implements Runnable
 
 				float speedCoefficient = EmulatorActivity.ActiveInstance.Configuration.CPUSpeed / 100.0f;
 
-		//		EmulatorActivity.TiEmuLoadEmulationInfo(Directories.getTempDirectory(Activity), Util.BoolToInt(EmulatorActivity.ActiveInstance.Configuration.EnableGrayScale), EmulatorActivity.CurrentSkin.LCDPixelON, EmulatorActivity.CurrentSkin.LCDPixelOFF, EmulatorActivity.CurrentSkin.LCDGRID, speedCoefficient, Util.BoolToInt(EmulatorActivity.ActiveInstance.Configuration.UseLCDGrid));
-
 				ScreenThread = new Thread(new ScreenRunnable());
 				ScreenThread.start();
 

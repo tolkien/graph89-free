@@ -1,0 +1,140 @@
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <Preference
+        android:key="CONFIG_TITLE"
+        android:title=""
+        app:iconSpaceReserved="false"/>
+
+    <PreferenceCategory
+        android:title="@string/key_press_feedback"
+        app:iconSpaceReserved="false" >
+
+        <SeekBarPreference
+            android:key="CONF_HAPTIC_FEEDBACK"
+            android:defaultValue="10"
+            android:dialogTitle="Set duration"
+            android:persistent="true"
+            android:summary="Key vibration"
+            android:title="@string/haptic_feedback"
+            android:max="30"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false"/>
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="CONF_AUDIO_FEEDBACK"
+            android:summary="Make a click sound on key press"
+            android:title="@string/acoustic_feedback"
+            app:iconSpaceReserved="false"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="CONFIG_CAT_DISPLAY_SETTINGS"
+        android:title="@string/display_settings"
+        app:iconSpaceReserved="false" >
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="CONF_ZOOM_MODE"
+            android:summary="Stretch the skin to fill the whole screen"
+            android:title="@string/zoom_mode"
+            app:iconSpaceReserved="false"/>
+
+        <ListPreference
+            android:defaultValue="Solid"
+            android:entries="@array/lcd_types"
+            android:entryValues="@array/lcd_values"
+            android:key="CONF_LCD_TYPE"
+            android:title="@string/lcd_type"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="CONF_ENABLE_GRAYSCALE"
+            android:summary="Used in certain games/apps. Enabling it will decrease the engine&apos;s performance"
+            android:title="@string/enable_grayscale"
+            app:iconSpaceReserved="false" />
+
+        <ListPreference
+            android:defaultValue="Default"
+            android:entries="@array/skin89Array"
+            android:entryValues="@array/skin89Values"
+            android:key="CONF_SKIN"
+            android:title="@string/skin"
+            app:iconSpaceReserved="false" />
+
+        <ListPreference
+            android:defaultValue="Classic V200"
+            android:entries="@array/skin200Array"
+            android:entryValues="@array/skin200Values"
+            android:key="CONF_SKIN_V200"
+            android:title="@string/skin"
+            app:iconSpaceReserved="false" />
+
+        <ListPreference
+            android:defaultValue="Classic 84"
+            android:entries="@array/skin84Array"
+            android:entryValues="@array/skin84Values"
+            android:key="CONF_SKIN_TI84"
+            android:title="@string/skin"
+            app:iconSpaceReserved="false" />
+
+        <ListPreference
+            android:defaultValue="Portrait"
+            android:entries="@array/orientationArray"
+            android:entryValues="@array/orientationValues"
+            android:key="CONF_ORIENTATION"
+            android:title="@string/orientation"
+            app:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/emulation_settings"
+        app:iconSpaceReserved="false" >
+
+        <SeekBarPreference
+            android:defaultValue="5"
+            android:dialogTitle="Turn off the Emulator"
+            android:key="CONF_AUTO_OFF"
+            android:persistent="true"
+            android:summary="Turn off the emulator after an interval of inactivity"
+            android:title="@string/auto_off"
+            android:max="31"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="CONF_OFF_ON_SCREENOFF"
+            android:summary="Exit app when the calculator is turned off by [2nd] [ON]"
+            android:title="@string/exit_on_screen_off"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="CONF_SAVE_STATE"
+            android:summary="Save the emulator state before exiting the app"
+            android:title="@string/save_state_on_exit"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="CONF_OVERCLOCK"
+            android:summary="Speed up the engine while performing calculations"
+            android:title="@string/overclock_when_busy"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="CONF_ENERGY_SAVE"
+            android:summary="Slow down if no activity"
+            android:title="@string/energy_save"
+            app:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

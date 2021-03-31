@@ -59,3 +59,6 @@ Mar 26, 2021
  
 Mar 27, 2021
  1. remove com.graph89.controls.AmbilWarnaPreference
+
+Mar 31, 2021
+ 1. remove graph89/controls/SeekBarPreference.java

@@ -175,7 +175,8 @@ public class CalculatorInstanceHelper
 	{
 		synchronized (LockObj)
 		{
-			ConfigurationHelper.WriteString(mContext, ConfigurationHelper.CONF_KEY_CALCULATOR_INSTANCES, toJson());
+			ConfigurationHelper.WriteString(mContext,
+				ConfigurationHelper.CONF_KEY_CALCULATOR_INSTANCES, toJson());
 		}
 	}
 
@@ -187,13 +188,14 @@ public class CalculatorInstanceHelper
 			{
 				sInstances = new ArrayList<CalculatorInstance>();
 
-				String instancesJson = ConfigurationHelper.GetString(mContext, ConfigurationHelper.CONF_KEY_CALCULATOR_INSTANCES, null);
+				String instancesJson = ConfigurationHelper.GetString(mContext,
+					ConfigurationHelper.CONF_KEY_CALCULATOR_INSTANCES, null);
 
 				if (!Util.StringNullOrEmpty(instancesJson))
 				{
 					Gson gsonHelper = new Gson();
-					sInstances = gsonHelper.fromJson(instancesJson, new TypeToken<List<CalculatorInstance>>() {
-					}.getType());
+					sInstances = gsonHelper.fromJson(instancesJson,
+						new TypeToken<List<CalculatorInstance>>() {	}.getType());
 				}
 			}
 		}

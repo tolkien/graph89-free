@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.Bisha.TI89Emu"
     android:installLocation="auto"
@@ -12,20 +13,20 @@
         android:smallScreens="true"
         android:xlargeScreens="true" />
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="false"
         android:icon="@drawable/ic_launcher"
         android:label="Graph 89 Free"
-        android:theme="@style/Graph89Theme"
-        android:supportsRtl="false">
+        android:supportsRtl="false"
+        android:theme="@style/Graph89Theme" >
         <activity
             android:name="com.graph89.emulationcore.EmulatorActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:label="Graph 89 Free">
+            android:label="Graph 89 Free"
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,27 +35,27 @@
         </activity>
         <activity
             android:name="com.graph89.emulationcore.RomManagerActivity"
-            android:theme="@style/Theme.AppCompat"
-            android:label="ROM Manager" />
+            android:label="ROM Manager"
+            android:theme="@style/Theme.AppCompat" />
         <activity
             android:name="com.graph89.controls.FilePickerActivity"
-            android:theme="@style/Theme.AppCompat"
-            android:label="Add ROM" />
+            android:label="Add ROM"
+            android:theme="@style/Theme.AppCompat" />
         <activity
             android:name="com.graph89.emulationcore.ConfigurationPage"
-            android:theme="@style/Theme.AppCompat"
-            android:label="Settings" />
+            android:label="Settings"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <!-- if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) { -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
             android:exported="false"
-            android:grantUriPermissions="true">
+            android:grantUriPermissions="true" >
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
+                android:resource="@xml/provider_paths" />
         </provider>
-        <!-- }if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) { -->
     </application>
+
 </manifest>
